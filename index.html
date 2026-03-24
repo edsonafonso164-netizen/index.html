@@ -17,7 +17,7 @@
   --teal-l: #2DD4BF;
   --purple-l: #a78bfa;
   --white: #EEF3FF;
-  --muted: #5a7090;
+  --muted: #7a95b0;
   --border: rgba(255,255,255,0.07);
   --font-display: 'Syne', 'Trebuchet MS', sans-serif;
   --font-mono: 'Space Mono', 'Courier New', monospace;
@@ -30,7 +30,7 @@ body{
   background:var(--bg);
   color:var(--white);
   font-family:var(--font-body);
-  font-weight:300;
+  font-weight:400;
   overflow-x:hidden;
   line-height:1.6;
 }
@@ -128,7 +128,7 @@ h1 .a2{color:var(--teal-l)}
   opacity:0;animation:up .7s ease .45s forwards;
 }
 .sub{
-  font-size:1rem;color:#7a9fc0;max-width:520px;
+  font-size:1.05rem;color:#8fb3d4;max-width:520px;
   line-height:1.8;margin-bottom:48px;
   opacity:0;animation:up .7s ease .55s forwards;
 }
@@ -218,7 +218,7 @@ h2.sec-title{
   font-family:var(--font-display);font-weight:700;
   font-size:1.15rem;margin-bottom:12px;letter-spacing:-.01em;
 }
-.pillar p{color:var(--muted);font-size:.9rem;line-height:1.7}
+.pillar p{color:var(--muted);font-size:.95rem;line-height:1.8}
 .pillar-arr{
   display:inline-block;margin-top:24px;
   font-family:var(--font-mono);font-size:.6rem;
@@ -234,7 +234,7 @@ h2.sec-title{
   display:grid;grid-template-columns:1fr 1fr;
   gap:72px;align-items:start;
 }
-.think-desc{color:var(--muted);line-height:1.8;font-size:.92rem;max-width:380px;margin-top:12px}
+.think-desc{color:var(--muted);line-height:1.85;font-size:.97rem;max-width:380px;margin-top:12px}
 .principles{display:flex;flex-direction:column;gap:2px}
 .principle{
   background:var(--surface);border:1px solid var(--border);
@@ -250,7 +250,7 @@ h2.sec-title{
   font-family:var(--font-display);font-weight:700;
   font-size:.98rem;margin-bottom:7px;letter-spacing:-.01em;
 }
-.pr-c p{color:var(--muted);font-size:.85rem;line-height:1.65}
+.pr-c p{color:var(--muted);font-size:.9rem;line-height:1.75}
 
 /* PROJECTS */
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -279,7 +279,7 @@ h2.sec-title{
   font-family:var(--font-display);font-weight:700;
   font-size:1.1rem;letter-spacing:-.01em;margin-bottom:10px;
 }
-.proj-card p{color:var(--muted);font-size:.87rem;line-height:1.7;margin-bottom:28px}
+.proj-card p{color:var(--muted);font-size:.92rem;line-height:1.75;margin-bottom:28px}
 .proj-status{
   font-family:var(--font-mono);font-size:.58rem;
   letter-spacing:.14em;text-transform:uppercase;
@@ -316,7 +316,7 @@ h2.sec-title{
   font-family:var(--font-display);font-weight:800;
   font-size:1.45rem;margin-bottom:14px;letter-spacing:-.02em;
 }
-.brand-card p{color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:24px}
+.brand-card p{color:var(--muted);font-size:.93rem;line-height:1.78;margin-bottom:24px}
 .brand-phase{
   font-family:var(--font-mono);font-size:.6rem;
   letter-spacing:.14em;color:var(--muted);text-transform:uppercase;
@@ -337,7 +337,7 @@ h2.sec-title{
   letter-spacing:-.025em;max-width:660px;
   margin:0 auto 20px;line-height:1.1;
 }
-.cta-sub{color:var(--muted);font-size:.95rem;max-width:440px;margin:0 auto 44px;line-height:1.8}
+.cta-sub{color:var(--muted);font-size:1rem;max-width:440px;margin:0 auto 44px;line-height:1.85}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 /* FOOTER */
@@ -351,7 +351,7 @@ footer{
   font-size:1rem;letter-spacing:-.01em;margin-bottom:6px;
 }
 .foot-name span{color:var(--blue-l)}
-.foot-sub{color:var(--muted);font-size:.82rem}
+.foot-sub{color:var(--muted);font-size:.85rem}
 .foot-links{display:flex;gap:28px}
 .foot-links a{
   font-family:var(--font-mono);font-size:.6rem;
@@ -368,15 +368,17 @@ footer{
 /* ANIMATIONS */
 @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes left{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
-.tl-item{opacity:0;transform:translateX(16px);transition:opacity .5s ease,transform .5s ease}
-.tl-item.in{opacity:1;transform:translateX(0)}
+.reveal{opacity:1;transform:none}
+
+
+.tl-item{opacity:1;transform:none}
+
+
 
 /* JOURNEY */
 .journey-wrap{display:grid;grid-template-columns:1fr 2fr;gap:72px;align-items:start;margin-top:56px}
 .journey-side{position:sticky;top:100px}
-.journey-side p{color:var(--muted);font-size:.9rem;line-height:1.8;margin-top:12px}
+.journey-side p{color:var(--muted);font-size:.95rem;line-height:1.85;margin-top:12px}
 .timeline{position:relative;padding-left:24px}
 .timeline::before{
   content:'';position:absolute;top:10px;left:0;bottom:0;
@@ -390,7 +392,7 @@ footer{
 }
 .tl-time{font-family:var(--font-mono);font-size:.58rem;color:var(--blue-l);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
 .tl-title{font-family:var(--font-display);font-weight:700;font-size:1rem;letter-spacing:-.01em;margin-bottom:6px}
-.tl-desc{color:var(--muted);font-size:.85rem;line-height:1.65}
+.tl-desc{color:var(--muted);font-size:.9rem;line-height:1.75}
 
 /* SKILLS */
 .skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;margin-top:56px}
@@ -400,7 +402,7 @@ footer{
 .skill-pct{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.08em}
 .skill-bar{height:2px;background:rgba(255,255,255,.08);overflow:hidden}
 .skill-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.4,0,.2,1)}
-.skill-note{font-family:var(--font-mono);font-size:.58rem;color:var(--muted);margin-top:6px;letter-spacing:.08em;opacity:.7}
+.skill-note{font-family:var(--font-mono);font-size:.62rem;color:var(--muted);margin-top:6px;letter-spacing:.08em;opacity:.7}
 .tech-wrap{margin-top:36px}
 .tech-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
 .tech-chip{
@@ -643,7 +645,7 @@ footer{
     <a href="http://www.youtube.com/@ErdeRootsJournal" target="_blank">Erde Roots</a>
   </div>
   <div class="foot-right">
-    <p>© 2025 Edson Afonso</p>
+    <p>© 2026 Edson Afonso</p>
     <p style="margin-top:4px">Clarity. Structure. Scale.</p>
   </div>
 </footer>
@@ -654,10 +656,17 @@ window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',scrollY>50)
 })
 
+// Fallback: show everything after 800ms regardless
+setTimeout(()=>{
+  document.querySelectorAll('.reveal,.tl-item').forEach(el=>{
+    if(!el.classList.contains('in')) el.classList.add('fallback')
+  })
+}, 800)
+
 // REVEAL ON SCROLL
 const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})
-},{threshold:.12,rootMargin:'0px 0px -48px 0px'})
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.classList.remove('fallback');obs.unobserve(e.target)}})
+},{threshold:.08,rootMargin:'0px 0px -20px 0px'})
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))
 
 // TIMELINE STAGGER
