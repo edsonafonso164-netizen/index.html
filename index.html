@@ -1,700 +1,890 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Edson Afonso | Systems Architect</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500&display=swap');
-
-:root {
-  --bg: #030917;
-  --surface: #071228;
-  --surface2: #0c1d3f;
-  --blue: #1B4FD8;
-  --blue-l: #4f8ff7;
-  --teal: #0D9488;
-  --teal-l: #2DD4BF;
-  --purple-l: #a78bfa;
-  --white: #EEF3FF;
-  --muted: #7a95b0;
-  --border: rgba(255,255,255,0.07);
-  --font-display: 'Syne', 'Trebuchet MS', sans-serif;
-  --font-mono: 'Space Mono', 'Courier New', monospace;
-  --font-body: 'Outfit', 'Segoe UI', sans-serif;
-}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--white);
-  font-family:var(--font-body);
-  font-weight:400;
-  overflow-x:hidden;
-  line-height:1.6;
-}
-
-/* GRID BG */
-body::before{
-  content:'';
-  position:fixed;inset:0;
-  background-image:
-    linear-gradient(rgba(27,79,216,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(27,79,216,.04) 1px,transparent 1px);
-  background-size:56px 56px;
-  pointer-events:none;
-  z-index:0;
-}
-
-section,nav,footer{position:relative;z-index:1}
-
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;
-  padding:18px 48px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:rgba(3,9,23,.85);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-  z-index:200;
-  transition:padding .3s;
-}
-nav.scrolled{padding:12px 48px}
-.logo{
-  font-family:var(--font-display);
-  font-weight:800;font-size:1.1rem;
-  color:var(--white);text-decoration:none;
-  letter-spacing:.02em;
-}
-.logo span{color:var(--blue-l)}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{
-  font-family:var(--font-mono);font-size:.65rem;
-  letter-spacing:.12em;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;
-  transition:color .2s;
-}
-.nav-links a:hover{color:var(--white)}
-.nav-btn{
-  font-family:var(--font-mono);font-size:.65rem;
-  letter-spacing:.12em;text-transform:uppercase;
-  padding:9px 20px;border:1px solid var(--blue);
-  color:var(--blue-l);text-decoration:none;border-radius:2px;
-  transition:background .2s,color .2s;
-}
-.nav-btn:hover{background:var(--blue);color:#fff}
-
-/* HERO */
-#hero{
-  min-height:100vh;
-  display:flex;flex-direction:column;justify-content:center;
-  padding:130px 48px 80px;
-  overflow:hidden;position:relative;
-}
-.glow1{
-  position:absolute;width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(27,79,216,.13) 0%,transparent 70%);
-  top:-200px;right:-200px;pointer-events:none;
-  animation:breathe 7s ease-in-out infinite alternate;
-}
-.glow2{
-  position:absolute;width:400px;height:400px;border-radius:50%;
-  background:radial-gradient(circle,rgba(13,148,136,.09) 0%,transparent 70%);
-  bottom:60px;left:-120px;pointer-events:none;
-  animation:breathe 9s ease-in-out infinite alternate-reverse;
-}
-@keyframes breathe{from{transform:scale(1)}to{transform:scale(1.18)}}
-
-.chip{
-  font-family:var(--font-mono);font-size:.6rem;
-  letter-spacing:.25em;text-transform:uppercase;
-  color:var(--teal-l);margin-bottom:28px;
-  opacity:0;animation:up .7s ease .15s forwards;
-}
-h1{
-  font-family:var(--font-display);font-weight:800;
-  font-size:clamp(2.8rem,6.5vw,6rem);
-  line-height:1.0;letter-spacing:-.03em;
-  max-width:860px;margin-bottom:28px;
-  opacity:0;animation:up .7s ease .3s forwards;
-}
-h1 .a1{color:var(--blue-l)}
-h1 .a2{color:var(--teal-l)}
-.rule{
-  width:72px;height:1px;
-  background:linear-gradient(90deg,var(--blue-l),var(--teal));
-  margin-bottom:24px;
-  opacity:0;animation:up .7s ease .45s forwards;
-}
-.sub{
-  font-size:1.05rem;color:#8fb3d4;max-width:520px;
-  line-height:1.8;margin-bottom:48px;
-  opacity:0;animation:up .7s ease .55s forwards;
-}
-.btns{
-  display:flex;gap:14px;flex-wrap:wrap;
-  opacity:0;animation:up .7s ease .7s forwards;
-}
-.btn-p{
-  background:var(--blue);color:#fff;
-  padding:13px 30px;border:none;border-radius:2px;
-  font-family:var(--font-mono);font-size:.68rem;
-  letter-spacing:.12em;text-transform:uppercase;
-  text-decoration:none;cursor:pointer;
-  transition:background .2s,transform .2s;display:inline-block;
-}
-.btn-p:hover{background:var(--blue-l);transform:translateY(-2px)}
-.btn-g{
-  background:transparent;color:var(--muted);
-  padding:13px 30px;border:1px solid var(--border);border-radius:2px;
-  font-family:var(--font-mono);font-size:.68rem;
-  letter-spacing:.12em;text-transform:uppercase;
-  text-decoration:none;cursor:pointer;
-  transition:border-color .2s,color .2s,transform .2s;display:inline-block;
-}
-.btn-g:hover{border-color:var(--teal);color:var(--teal-l);transform:translateY(-2px)}
-
-.hero-stats{
-  position:absolute;right:48px;bottom:72px;
-  display:flex;flex-direction:column;gap:20px;
-  opacity:0;animation:left .7s ease .9s forwards;
-}
-.stat-n{
-  font-family:var(--font-display);font-weight:800;
-  font-size:2.2rem;color:var(--white);
-  display:block;text-align:right;
-}
-.stat-l{
-  font-family:var(--font-mono);font-size:.58rem;
-  letter-spacing:.15em;color:var(--muted);
-  text-transform:uppercase;display:block;text-align:right;
-}
-
-/* SHARED SECTION */
-section.sec{
-  padding:100px 48px;
-  border-top:1px solid var(--border);
-}
-.sec-label{
-  font-family:var(--font-mono);font-size:.6rem;
-  letter-spacing:.22em;text-transform:uppercase;
-  color:var(--teal);margin-bottom:16px;
-  display:flex;align-items:center;gap:10px;
-}
-.sec-label::after{content:'';display:block;width:36px;height:1px;background:var(--teal);opacity:.5}
-h2.sec-title{
-  font-family:var(--font-display);font-weight:800;
-  font-size:clamp(1.9rem,3.8vw,3rem);
-  letter-spacing:-.025em;line-height:1.1;
-  margin-bottom:56px;
-}
-
-/* WHAT I DO — pillars */
-.pillars{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:2px;background:var(--border);
-  border:1px solid var(--border);
-}
-.pillar{
-  background:var(--bg);padding:44px 36px;
-  position:relative;overflow:hidden;
-  transition:background .3s;
-}
-.pillar::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--blue-l),transparent);
-  transform:scaleX(0);transition:transform .4s;
-}
-.pillar:hover{background:var(--surface)}
-.pillar:hover::before{transform:scaleX(1)}
-.pillar-n{
-  font-family:var(--font-mono);font-size:.58rem;
-  color:var(--muted);letter-spacing:.18em;
-  display:block;margin-bottom:28px;
-}
-.pillar-ico{font-size:1.8rem;display:block;margin-bottom:18px}
-.pillar h3{
-  font-family:var(--font-display);font-weight:700;
-  font-size:1.15rem;margin-bottom:12px;letter-spacing:-.01em;
-}
-.pillar p{color:var(--muted);font-size:.95rem;line-height:1.8}
-.pillar-arr{
-  display:inline-block;margin-top:24px;
-  font-family:var(--font-mono);font-size:.6rem;
-  letter-spacing:.14em;color:var(--blue-l);
-  text-transform:uppercase;
-  opacity:0;transform:translateX(-8px);
-  transition:opacity .3s,transform .3s;
-}
-.pillar:hover .pillar-arr{opacity:1;transform:translateX(0)}
-
-/* HOW I THINK */
-#think{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:72px;align-items:start;
-}
-.think-desc{color:var(--muted);line-height:1.85;font-size:.97rem;max-width:380px;margin-top:12px}
-.principles{display:flex;flex-direction:column;gap:2px}
-.principle{
-  background:var(--surface);border:1px solid var(--border);
-  padding:28px 32px;display:flex;gap:20px;align-items:flex-start;
-  transition:background .3s,border-color .3s;
-}
-.principle:hover{background:var(--surface2);border-color:rgba(27,79,216,.3)}
-.pr-n{
-  font-family:var(--font-mono);font-size:.6rem;
-  color:var(--blue-l);letter-spacing:.1em;min-width:22px;margin-top:3px;
-}
-.pr-c h4{
-  font-family:var(--font-display);font-weight:700;
-  font-size:.98rem;margin-bottom:7px;letter-spacing:-.01em;
-}
-.pr-c p{color:var(--muted);font-size:.9rem;line-height:1.75}
-
-/* PROJECTS */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.proj-card{
-  background:var(--surface);border:1px solid var(--border);
-  padding:36px;position:relative;overflow:hidden;
-  transition:transform .3s,border-color .3s;
-}
-.proj-card::after{
-  content:'';position:absolute;bottom:0;left:0;
-  width:100%;height:2px;
-  background:linear-gradient(90deg,var(--blue),var(--teal));
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .4s;
-}
-.proj-card:hover{transform:translateY(-6px);border-color:rgba(27,79,216,.3)}
-.proj-card:hover::after{transform:scaleX(1)}
-.proj-tag{
-  font-family:var(--font-mono);font-size:.58rem;
-  letter-spacing:.16em;text-transform:uppercase;
-  color:var(--teal);padding:3px 9px;
-  border:1px solid rgba(13,148,136,.3);border-radius:2px;
-  display:inline-block;margin-bottom:24px;
-}
-.proj-card h3{
-  font-family:var(--font-display);font-weight:700;
-  font-size:1.1rem;letter-spacing:-.01em;margin-bottom:10px;
-}
-.proj-card p{color:var(--muted);font-size:.92rem;line-height:1.75;margin-bottom:28px}
-.proj-status{
-  font-family:var(--font-mono);font-size:.58rem;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:var(--purple-l);
-  display:flex;align-items:center;gap:7px;
-}
-.proj-status::before{
-  content:'';width:5px;height:5px;border-radius:50%;
-  background:var(--purple-l);
-  animation:blink 2s ease infinite;
-}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-
-/* BRANDS */
-.brands{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.brand-card{
-  border:1px solid var(--border);padding:44px 36px;
-  position:relative;overflow:hidden;
-  transition:border-color .3s,transform .3s;
-}
-.brand-card:nth-child(1){border-top:2px solid var(--blue-l)}
-.brand-card:nth-child(2){border-top:2px solid var(--teal)}
-.brand-card:nth-child(3){border-top:2px solid #4ade80}
-.brand-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.15)}
-.badge{
-  display:inline-block;padding:3px 11px;border-radius:2px;
-  font-family:var(--font-mono);font-size:.58rem;
-  letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px;
-}
-.b-blue{background:rgba(27,79,216,.15);color:var(--blue-l)}
-.b-teal{background:rgba(13,148,136,.15);color:var(--teal-l)}
-.b-green{background:rgba(74,222,128,.15);color:#4ade80}
-.brand-card h3{
-  font-family:var(--font-display);font-weight:800;
-  font-size:1.45rem;margin-bottom:14px;letter-spacing:-.02em;
-}
-.brand-card p{color:var(--muted);font-size:.93rem;line-height:1.78;margin-bottom:24px}
-.brand-phase{
-  font-family:var(--font-mono);font-size:.6rem;
-  letter-spacing:.14em;color:var(--muted);text-transform:uppercase;
-}
-
-/* CTA */
-#cta{text-align:center;position:relative;overflow:hidden}
-.cta-glow{
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:600px;height:400px;
-  background:radial-gradient(ellipse,rgba(27,79,216,.1) 0%,transparent 70%);
-  pointer-events:none;
-}
-.cta-headline{
-  font-family:var(--font-display);font-weight:800;
-  font-size:clamp(1.9rem,3.8vw,3.2rem);
-  letter-spacing:-.025em;max-width:660px;
-  margin:0 auto 20px;line-height:1.1;
-}
-.cta-sub{color:var(--muted);font-size:1rem;max-width:440px;margin:0 auto 44px;line-height:1.85}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-/* FOOTER */
-footer{
-  padding:64px 48px;border-top:1px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center;
-  position:relative;z-index:1;
-}
-.foot-name{
-  font-family:var(--font-display);font-weight:800;
-  font-size:1rem;letter-spacing:-.01em;margin-bottom:6px;
-}
-.foot-name span{color:var(--blue-l)}
-.foot-sub{color:var(--muted);font-size:.85rem}
-.foot-links{display:flex;gap:28px}
-.foot-links a{
-  font-family:var(--font-mono);font-size:.6rem;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;
-  transition:color .2s;
-}
-.foot-links a:hover{color:var(--white)}
-.foot-right{
-  font-family:var(--font-mono);font-size:.58rem;
-  color:var(--muted);letter-spacing:.08em;text-align:right;
-}
-
-/* ANIMATIONS */
-@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@keyframes left{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
-.reveal{opacity:1;transform:none}
-
-
-.tl-item{opacity:1;transform:none}
-
-
-
-/* JOURNEY */
-.journey-wrap{display:grid;grid-template-columns:1fr 2fr;gap:72px;align-items:start;margin-top:56px}
-.journey-side{position:sticky;top:100px}
-.journey-side p{color:var(--muted);font-size:.95rem;line-height:1.85;margin-top:12px}
-.timeline{position:relative;padding-left:24px}
-.timeline::before{
-  content:'';position:absolute;top:10px;left:0;bottom:0;
-  width:1px;background:linear-gradient(to bottom,var(--blue),var(--teal),transparent);opacity:.35;
-}
-.tl-item{margin-bottom:40px;position:relative}
-.tl-item::before{
-  content:'';position:absolute;left:-28px;top:8px;
-  width:7px;height:7px;border-radius:50%;
-  border:1px solid var(--blue-l);background:var(--bg);
-}
-.tl-time{font-family:var(--font-mono);font-size:.58rem;color:var(--blue-l);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
-.tl-title{font-family:var(--font-display);font-weight:700;font-size:1rem;letter-spacing:-.01em;margin-bottom:6px}
-.tl-desc{color:var(--muted);font-size:.9rem;line-height:1.75}
-
-/* SKILLS */
-.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;margin-top:56px}
-.skill-item{margin-bottom:28px}
-.skill-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
-.skill-n{font-family:var(--font-display);font-weight:600;font-size:.92rem;letter-spacing:-.01em}
-.skill-pct{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.08em}
-.skill-bar{height:2px;background:rgba(255,255,255,.08);overflow:hidden}
-.skill-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.4,0,.2,1)}
-.skill-note{font-family:var(--font-mono);font-size:.62rem;color:var(--muted);margin-top:6px;letter-spacing:.08em;opacity:.7}
-.tech-wrap{margin-top:36px}
-.tech-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-.tech-chip{
-  font-family:var(--font-mono);font-size:.58rem;
-  letter-spacing:.1em;text-transform:uppercase;
-  padding:5px 11px;border:1px solid var(--border);
-  color:var(--muted);border-radius:2px;
-  transition:border-color .2s,color .2s;cursor:default;
-}
-.tech-chip:hover{border-color:var(--blue-l);color:var(--blue-l)}
-
-/* RESPONSIVE */
-@media(max-width:860px){
-  nav{padding:16px 20px}
-  .nav-links{display:none}
-  #hero{padding:110px 20px 72px}
-  .hero-stats{display:none}
-  .pillars,.proj-grid,.brands,.skills-wrap{grid-template-columns:1fr}
-  #think{grid-template-columns:1fr;gap:40px}
-  .journey-wrap{grid-template-columns:1fr;gap:40px}
-  .journey-side{position:static}
-  section.sec{padding:72px 20px}
-  footer{flex-direction:column;gap:28px;padding:48px 20px;text-align:center}
-  .foot-links{justify-content:center}
-  .foot-right{text-align:center}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edson Afonso — Systems Architect | Supply Chain & E-Commerce</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Edson Afonso — Systems Architect building a €1M digital business. Supply chain expertise, e-commerce strategy, and scalable systems for entrepreneurs. Based in Portugal.">
+    <meta name="keywords" content="systems architect, supply chain, e-commerce, entrepreneurship, business strategy, Portugal, Angola, digital business, ChainLogic">
+    <meta name="author" content="Edson Afonso">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://edsonafonso.com">
+    <meta property="og:title" content="Edson Afonso — Systems Architect | Supply Chain & E-Commerce">
+    <meta property="og:description" content="Building a €1M digital business from zero capital. Supply chain mastery, e-commerce strategy, and scalable systems for entrepreneurs.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop">
+    <meta property="og:site_name" content="Edson Afonso">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://edsonafonso.com">
+    <meta name="twitter:title" content="Edson Afonso — Systems Architect | Supply Chain & E-Commerce">
+    <meta name="twitter:description" content="Building a €1M digital business from zero capital. Supply chain mastery, e-commerce strategy, and scalable systems for entrepreneurs.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://edsonafonso.com">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Edson Afonso",
+        "url": "https://edsonafonso.com",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+        "description": "Systems Architect building a €1M digital business. Supply chain expertise, e-commerce strategy, and scalable systems for entrepreneurs.",
+        "sameAs": [
+            "https://linkedin.com/in/edson-afonso-2943702a0",
+            "https://youtube.com/@ThriveOn-r1r",
+            "https://youtube.com/@ErdeRootsJournal"
+        ],
+        "jobTitle": "Systems Architect & Entrepreneur",
+        "location": {
+            "@type": "Place",
+            "name": "Aveiro, Portugal"
+        }
+    }
+    </script>
+    
+    <style>
+    /* System font fallbacks — render without external requests */
+    </style>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg: #03091A;
+            --surface: #071228;
+            --surface2: #0c1d3f;
+            --blue: #1B4FD8;
+            --blue-l: #4f8ff7;
+            --teal: #0D9488;
+            --teal-l: #2DD4BF;
+            --purple-l: #a78bfa;
+            --white: #EEF3FF;
+            --muted: #7a95b0;
+            --border: rgba(255,255,255,0.07);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(31, 79, 216, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(31, 79, 216, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Navigation */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(3, 9, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--blue-l), var(--teal-l));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--teal-l);
+        }
+        
+        .nav-cta {
+            padding: 8px 16px;
+            border: 1px solid var(--blue-l);
+            border-radius: 4px;
+            color: var(--blue-l);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            background: rgba(79, 143, 247, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(31, 79, 216, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .section-label {
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--blue-l) 50%, var(--teal-l) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: 1px solid transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(31, 79, 216, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(31, 79, 216, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--teal-l);
+            border: 1px solid var(--teal-l);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(45, 212, 191, 0.1);
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--blue-l), var(--teal-l));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        /* Section */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        section h2 {
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+        
+        .section-intro {
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 50px;
+            max-width: 600px;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue) 0%, var(--teal) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--blue-l);
+            background: rgba(31, 79, 216, 0.05);
+        }
+        
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        /* Principles Grid */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .principle {
+            border-left: 3px solid var(--blue-l);
+            padding-left: 30px;
+        }
+        
+        .principle h3 {
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .principle p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--teal-l);
+        }
+        
+        .project-tag {
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 11px;
+            color: var(--teal-l);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .project-card h3 {
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .project-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .project-status {
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 12px;
+            color: var(--blue-l);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--blue) 0%, var(--teal) 100%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 50px;
+            margin-left: 40px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--teal-l);
+            border-radius: 50%;
+            border: 3px solid var(--bg);
+        }
+        
+        .timeline-label {
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 12px;
+            color: var(--teal-l);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item h3 {
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        /* Ecosystem */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .ecosystem-card {
+            background: linear-gradient(135deg, rgba(31, 79, 216, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .ecosystem-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--teal-l);
+        }
+        
+        .ecosystem-card h3 {
+            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .ecosystem-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .ecosystem-link {
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 12px;
+            color: var(--blue-l);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .ecosystem-link:hover {
+            color: var(--teal-l);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(31, 79, 216, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 80px 40px;
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 40px;
+        }
+        
+        .footer-location {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--teal-l);
+        }
+        
+        .footer-bottom {
+            font-size: 12px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            padding-top: 30px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero, section {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            section h2 {
+                font-size: 32px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero-ctas {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .timeline::before {
+                left: -20px;
+            }
+            
+            .timeline-item {
+                margin-left: 20px;
+            }
+            
+            .timeline-item::before {
+                left: -28px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav id="nav">
-  <a class="logo" href="#hero">EA<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="#what">Services</a></li>
-    <li><a href="#think">Approach</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#ecosystem">Ecosystem</a></li>
-  </ul>
-  <a class="nav-btn" href="#cta">Connect →</a>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="glow1"></div>
-  <div class="glow2"></div>
-  <p class="chip">// Systems Architect — Building in Public</p>
-  <h1>
-    Clarity in thinking.<br>
-    <span class="a1">Precision</span> in structure.<br>
-    Systems that <span class="a2">scale.</span>
-  </h1>
-  <div class="rule"></div>
-  <p class="sub">I design and document structured approaches to e-commerce, supply chains, and business operations — building global systems from the ground up, one model at a time.</p>
-  <div class="btns">
-    <a class="btn-p" href="#projects">Explore My Work →</a>
-    <a class="btn-g" href="#ecosystem">Follow My Journey</a>
-  </div>
-  <div class="hero-stats">
-    <div><span class="stat-n">3</span><span class="stat-l">Brand Verticals</span></div>
-    <div><span class="stat-n">∞</span><span class="stat-l">Ambition</span></div>
-    <div><span class="stat-n">01</span><span class="stat-l">Moment to Start</span></div>
-  </div>
-</section>
-
-<!-- WHAT I DO -->
-<section class="sec" id="what">
-  <div class="sec-label reveal">01 — What I Do</div>
-  <h2 class="sec-title reveal">Designing systems<br>that create clarity.</h2>
-  <div class="pillars reveal">
-    <div class="pillar">
-      <span class="pillar-n">001</span>
-      <span class="pillar-ico">⟁</span>
-      <h3>E-commerce Systems</h3>
-      <p>Structured product selection, supplier flows, and fulfilment design. Building commerce that runs on logic, not luck.</p>
-      <span class="pillar-arr">Explore →</span>
-    </div>
-    <div class="pillar">
-      <span class="pillar-n">002</span>
-      <span class="pillar-ico">◈</span>
-      <h3>Supply Chain Design</h3>
-      <p>Efficient, scalable logistics thinking across the China–Africa–Europe corridor. Asset-light. High leverage.</p>
-      <span class="pillar-arr">Explore →</span>
-    </div>
-    <div class="pillar">
-      <span class="pillar-n">003</span>
-      <span class="pillar-ico">❋</span>
-      <h3>Agricultural Systems</h3>
-      <p>Production-to-market pipelines for African agriculture. Mapping the flow from land to premium global markets.</p>
-      <span class="pillar-arr">Explore →</span>
-    </div>
-  </div>
-</section>
-
-<!-- HOW I THINK -->
-<section class="sec" id="think" style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
-  <div>
-    <div class="sec-label reveal">02 — How I Think</div>
-    <h2 class="sec-title reveal" style="margin-bottom:16px">The principles<br>behind every<br>decision.</h2>
-    <p class="think-desc reveal">Most people rush to execution. I design the thinking before the action — because clarity at the foundation changes everything downstream.</p>
-  </div>
-  <div class="principles reveal">
-    <div class="principle">
-      <span class="pr-n">01.</span>
-      <div class="pr-c"><h4>Clarity before action</h4><p>I break complexity into structured understanding before touching execution. Ambiguity is the enemy of scale.</p></div>
-    </div>
-    <div class="principle">
-      <span class="pr-n">02.</span>
-      <div class="pr-c"><h4>Systems over shortcuts</h4><p>Repeatable, scalable processes outlast any tactic. Every system I design is built to run without me.</p></div>
-    </div>
-    <div class="principle">
-      <span class="pr-n">03.</span>
-      <div class="pr-c"><h4>Precision at every layer</h4><p>Small structural decisions compound into large outcomes. Architecture matters as much as action.</p></div>
-    </div>
-    <div class="principle">
-      <span class="pr-n">04.</span>
-      <div class="pr-c"><h4>Build in public</h4><p>I learn, apply, and document transparently. Sharing the process creates trust and accelerates growth.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="sec" id="projects">
-  <div class="sec-label reveal">03 — Projects</div>
-  <h2 class="sec-title reveal">Systems under<br>construction.</h2>
-  <div class="proj-grid reveal">
-    <div class="proj-card">
-      <span class="proj-tag">E-commerce</span>
-      <h3>E-commerce System Blueprint</h3>
-      <p>A structured approach to building an online business from scratch — product logic, supplier selection, and fulfilment flow mapped end-to-end.</p>
-      <span class="proj-status">In Progress</span>
-    </div>
-    <div class="proj-card">
-      <span class="proj-tag">Supply Chain</span>
-      <h3>Supply Chain Model</h3>
-      <p>Mapping efficient product flow across the China–Africa–Europe corridor. From source to shelf, every node designed for margin and scale.</p>
-      <span class="proj-status">In Progress</span>
-    </div>
-    <div class="proj-card">
-      <span class="proj-tag">Documentation</span>
-      <h3>Build in Public Journal</h3>
-      <p>A transparent record of learning, decision-making, and system iteration. The thinking behind the building — unfiltered.</p>
-      <span class="proj-status">Live Soon</span>
-    </div>
-  </div>
-</section>
-
-<!-- JOURNEY -->
-<section class="sec" id="journey">
-  <div class="sec-label reveal">04 — Journey</div>
-  <div class="journey-wrap">
-    <div class="journey-side reveal">
-      <h2 class="sec-title" style="margin-bottom:0;font-size:clamp(1.8rem,3vw,2.6rem)">Starting from<br>first principles.</h2>
-      <p>This is not a finished story. It is a system being built — one structured decision at a time. Every stage documented, every lesson applied.</p>
-    </div>
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-time">Now — 2025</div><div class="tl-title">Foundation Layer</div><p class="tl-desc">Selecting markets, acquiring core knowledge in e-commerce, supply chain, and business systems. Beginning the quadrant shift: E/S → B/I.</p></div>
-      <div class="tl-item"><div class="tl-time">6–18 Months</div><div class="tl-title">First Systems Active</div><p class="tl-desc">E-commerce and dropshipping models live. Supply chain knowledge applied to real sourcing decisions. First income streams generating consistently.</p></div>
-      <div class="tl-item"><div class="tl-time">1–3 Years</div><div class="tl-title">Trade Corridor Entry</div><p class="tl-desc">China–Angola–EU logistics brokerage. ChainLogic operating as a structured commerce and supply entity. Erde Roots producing and exporting.</p></div>
-      <div class="tl-item"><div class="tl-time">3–7 Years</div><div class="tl-title">Asset Multiplication</div><p class="tl-desc">Agroforestry investments in Angola. Multiple passive income streams producing. All three brand verticals generating independent cash flow.</p></div>
-      <div class="tl-item"><div class="tl-time">5–10 Years</div><div class="tl-title">€1M Net Worth</div><p class="tl-desc">Financial freedom achieved. Global portability secured. Teaching and lecturing on the systems that made it possible.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="sec" id="skills">
-  <div class="sec-label reveal">05 — Capabilities</div>
-  <h2 class="sec-title reveal">Deliberately<br>built skills.</h2>
-  <div class="skills-wrap reveal">
-    <div>
-      <div class="skill-item"><div class="skill-head"><span class="skill-n">Strategic Thinking</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" data-w=".82"></div></div><p class="skill-note">Systems design · decision frameworks · scenario planning</p></div>
-      <div class="skill-item"><div class="skill-head"><span class="skill-n">Communication</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w=".85"></div></div><p class="skill-note">Clear · structured · persuasive across audiences</p></div>
-      <div class="skill-item"><div class="skill-head"><span class="skill-n">Business Systems Design</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w=".70"></div></div><p class="skill-note">P&L modelling · operational flow · scenario planning</p></div>
-      <div class="skill-item"><div class="skill-head"><span class="skill-n">Teaching & Lecturing</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill" data-w=".78"></div></div><p class="skill-note">Simplifying complexity into learnable structures</p></div>
-    </div>
-    <div>
-      <div class="skill-item"><div class="skill-head"><span class="skill-n">E-commerce Operations</span><span class="skill-pct">35%</span></div><div class="skill-bar"><div class="skill-fill" data-w=".35"></div></div><p class="skill-note">Actively learning · product research · supplier sourcing</p></div>
-      <div class="skill-item"><div class="skill-head"><span class="skill-n">Supply Chain Knowledge</span><span class="skill-pct">30%</span></div><div class="skill-bar"><div class="skill-fill" data-w=".30"></div></div><p class="skill-note">Actively learning · logistics · freight · trade corridors</p></div>
-      <div class="skill-item"><div class="skill-head"><span class="skill-n">Financial Modelling</span><span class="skill-pct">45%</span></div><div class="skill-bar"><div class="skill-fill" data-w=".45"></div></div><p class="skill-note">P&L · FCF analysis · COA scenario planning</p></div>
-      <div class="tech-wrap">
-        <p class="skill-note">Tools & Platforms</p>
-        <div class="tech-grid">
-          <span class="tech-chip">Notion</span><span class="tech-chip">Excel</span><span class="tech-chip">Alibaba</span><span class="tech-chip">Shopify</span><span class="tech-chip">Canva</span><span class="tech-chip">ChatGPT</span><span class="tech-chip">Claude</span><span class="tech-chip">YouTube</span>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">EA</a>
+                <nav>
+                    <ul>
+                        <li><a href="#services">SERVICES</a></li>
+                        <li><a href="#approach">APPROACH</a></li>
+                        <li><a href="#projects">PROJECTS</a></li>
+                        <li><a href="#ecosystem">ECOSYSTEM</a></li>
+                        <li><a href="#connect" class="nav-cta">CONNECT</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ECOSYSTEM -->
-<section class="sec" id="ecosystem" style="background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%)">
-  <div class="sec-label reveal">06 — Ecosystem</div>
-  <h2 class="sec-title reveal">Three brands.<br>One architect.</h2>
-  <p class="reveal" style="color:var(--muted);max-width:520px;line-height:1.8;font-size:.95rem;margin-bottom:56px;margin-top:-32px">Each brand operates in its own domain — but they share the same system: clarity, structure, and long-term thinking.</p>
-  <div class="brands reveal">
-    <div class="brand-card">
-      <span class="badge b-blue">Mindset Layer</span>
-      <h3>ThriveOn</h3>
-      <p>Self-mastery, discipline, and the philosophy of intentional growth. The mindset foundation that makes everything else possible.</p>
-      <span class="brand-phase">YouTube · Coming Soon</span>
-    </div>
-    <div class="brand-card">
-      <span class="badge b-teal">Commerce Layer</span>
-      <h3>ChainLogic</h3>
-      <p>E-commerce → dropshipping → supply chain → logistics. A structured progression building the primary economic engine.</p>
-      <span class="brand-phase">Building · Phase 1</span>
-    </div>
-    <div class="brand-card">
-      <span class="badge b-green">Agricultural Layer</span>
-      <h3>Erde Roots Journals</h3>
-      <p>Documenting agricultural systems, production-to-market pipelines, and the long-term agroforestry play in Angola.</p>
-      <span class="brand-phase">YouTube · Coming Soon</span>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="sec" id="cta">
-  <div class="cta-glow"></div>
-  <div class="sec-label reveal" style="justify-content:center">07 — Let's Connect</div>
-  <h2 class="cta-headline reveal">You don't need more information.<br>You need a better system.</h2>
-  <p class="cta-sub reveal">If you're building something and need a strategic thinker who brings structure, clarity, and precision — let's talk.</p>
-  <div class="cta-btns reveal">
-    <a class="btn-p" href="/cdn-cgi/l/email-protection#e78f828b8b88a78283948889868188899488c984888a">Work With Me →</a>
-    <a class="btn-g" href="#journey">Follow The Journey</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div>
-    <p class="foot-name">Edson Afonso <span>| Systems Architect</span></p>
-    <p class="foot-sub">Angola · EU · Portugal (Incoming) · Global</p>
-  </div>
-  <div class="foot-links">
-    <a href="/cdn-cgi/l/email-protection#e088858c8c8fa08584938f8e81868f8e938fce838f8d">Email</a>
-    <a href="https://www.linkedin.com/in/edson-afonso-2943702a0?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="https://www.youtube.com/@ThriveOn-r1r" target="_blank" rel="noopener noreferrer">ThriveOn</a>
-    <a href="https://www.youtube.com/@ErdeRootsJournal" target="_blank" rel="noopener noreferrer">Erde Roots</a>
-  </div>
-  <div class="foot-right">
-    <p>© 2026 Edson Afonso</p>
-    <p style="margin-top:4px">Clarity. Structure. Scale.</p>
-  </div>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// NAV SCROLL
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',scrollY>50)
-})
-
-// Fallback: show everything after 800ms regardless
-setTimeout(()=>{
-  document.querySelectorAll('.reveal,.tl-item').forEach(el=>{
-    if(!el.classList.contains('in')) el.classList.add('fallback')
-  })
-}, 800)
-
-// REVEAL ON SCROLL
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.classList.remove('fallback');obs.unobserve(e.target)}})
-},{threshold:.08,rootMargin:'0px 0px -20px 0px'})
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))
-
-// TIMELINE STAGGER
-const tlObs=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){
-      setTimeout(()=>e.target.classList.add('in'),i*130)
-      tlObs.unobserve(e.target)
-    }
-  })
-},{threshold:.15})
-document.querySelectorAll('.tl-item').forEach(el=>tlObs.observe(el))
-
-// SKILL BARS
-const skObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.style.transform=`scaleX(${e.target.dataset.w})`
-      skObs.unobserve(e.target)
-    }
-  })
-},{threshold:.3})
-document.querySelectorAll('.skill-fill').forEach(el=>skObs.observe(el))
-
-// STAGGER delays for grids
-document.querySelectorAll('.pillar,.proj-card,.brand-card,.principle').forEach((el,i)=>{
-  el.style.transitionDelay=`${i*.07}s`
-})
-
-// SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="section-label">Systems Architect — Building in Public</div>
+                <h1>Clarity in thinking.<br>Precision in structure.<br>Systems that scale.</h1>
+                <p class="tagline">I design the structures that turn complexity into clarity — and chaos into scalable, profitable operations. Serving entrepreneurs, SMEs, and operators across e-commerce, supply chain, and agriculture.</p>
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                    <a href="https://linkedin.com/in/edson-afonso-2943702a0" target="_blank" class="btn btn-secondary">Follow My Journey</a>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Brand Verticals</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Ambition</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">01</div>
+                        <div class="stat-label">Moment to Start</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services">
+            <div class="container">
+                <h2>What I Do</h2>
+                <p class="section-intro">Designing systems that create clarity. Every service is built on the principle that structure precedes execution.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">⟁</div>
+                        <h3>E-commerce Systems</h3>
+                        <p>Structured product selection, supplier flows, and fulfilment design. Building commerce that runs on logic, not luck.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">◈</div>
+                        <h3>Supply Chain Design</h3>
+                        <p>Efficient, scalable logistics thinking across the China–Africa–Europe corridor. Asset-light. High leverage.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">❋</div>
+                        <h3>Agricultural Systems</h3>
+                        <p>Production-to-market pipelines for African agriculture. Mapping the flow from land to premium global markets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="approach">
+            <div class="container">
+                <h2>How I Think</h2>
+                <p class="section-intro">The principles behind every decision. Most people rush to execution. I design the thinking before the action — because clarity at the foundation changes everything downstream.</p>
+                <div class="principles-grid">
+                    <div class="principle">
+                        <h3>Clarity before action</h3>
+                        <p>I break complexity into structured understanding before touching execution. Ambiguity is the enemy of scale.</p>
+                    </div>
+                    <div class="principle">
+                        <h3>Systems over shortcuts</h3>
+                        <p>Repeatable, scalable processes outlast any tactic. Every system I design is built to run without me.</p>
+                    </div>
+                    <div class="principle">
+                        <h3>Precision at every layer</h3>
+                        <p>Small structural decisions compound into large outcomes. Architecture matters as much as action.</p>
+                    </div>
+                    <div class="principle">
+                        <h3>Build in public</h3>
+                        <p>I learn, apply, and document transparently. Sharing the process creates trust and accelerates growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <p class="section-intro">Systems under construction. Each project is a real-world application of the principles above.</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-tag">E-Commerce</div>
+                        <h3>E-commerce System Blueprint</h3>
+                        <p>A structured approach to building an online business from scratch — product logic, supplier selection, and fulfilment flow mapped end-to-end.</p>
+                        <div class="project-status">Phase 1 — Product & sourcing framework</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-tag">Supply Chain</div>
+                        <h3>Supply Chain Model</h3>
+                        <p>Mapping efficient product flow across the China–Africa–Europe corridor. From source to shelf, every node designed for margin and scale.</p>
+                        <div class="project-status">Phase 1 — Corridor mapping</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-tag">Documentation</div>
+                        <h3>Build in Public Journal</h3>
+                        <p>A transparent record of learning, decision-making, and system iteration. The thinking behind the building — unfiltered.</p>
+                        <div class="project-status">Launching Q2 2026</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <h2>Journey</h2>
+                <p class="section-intro">Starting from first principles. This is not a finished story. It is a system being built — one structured decision at a time.</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-label">Now — 2026</div>
+                        <h3>Foundation Layer</h3>
+                        <p>Selecting markets, acquiring core knowledge in e-commerce, supply chain, and business systems. Beginning the quadrant shift: E/S → B/I.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-label">6–18 Months</div>
+                        <h3>First Systems Active</h3>
+                        <p>E-commerce and dropshipping models live. Supply chain knowledge applied to real sourcing decisions. First income streams generating consistently.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-label">1–3 Years</div>
+                        <h3>Trade Corridor Entry</h3>
+                        <p>China–Angola–EU logistics brokerage. ChainLogic operating as a structured commerce and supply entity. Erde Roots producing and exporting.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-label">3–7 Years</div>
+                        <h3>Asset Multiplication</h3>
+                        <p>Agroforestry investments in Angola. Multiple passive income streams producing. All three brand verticals generating independent cash flow.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-label">5–10 Years</div>
+                        <h3>€1M Net Worth</h3>
+                        <p>Financial freedom achieved. Global portability secured. Teaching and lecturing on the systems that made it possible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ecosystem">
+            <div class="container">
+                <h2>Ecosystem</h2>
+                <p class="section-intro">Three brands. One architect. Each operates independently but shares the same system: clarity, structure, and long-term thinking.</p>
+                <div class="ecosystem-grid">
+                    <div class="ecosystem-card">
+                        <h3>ThriveOn</h3>
+                        <p>Self-mastery, discipline, and the philosophy of intentional growth. The mindset foundation that makes everything else possible.</p>
+                        <a href="https://youtube.com/@ThriveOn-r1r" target="_blank" class="ecosystem-link">YouTube Channel →</a>
+                    </div>
+                    <div class="ecosystem-card">
+                        <h3>ChainLogic</h3>
+                        <p>E-commerce → dropshipping → supply chain → logistics. A structured progression building the primary economic engine.</p>
+                        <a href="#ecosystem" target="_blank" class="ecosystem-link">Learn More →</a>
+                    </div>
+                    <div class="ecosystem-card">
+                        <h3>Erde Roots Journals</h3>
+                        <p>Documenting agricultural systems, production-to-market pipelines, and the long-term agroforestry play in Angola.</p>
+                        <a href="https://youtube.com/@ErdeRootsJournal" target="_blank" class="ecosystem-link">YouTube Channel →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section" id="connect">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <p>You don't need more information. You need a better system. If you're building something and need a strategic thinker who brings structure, clarity, and precision — let's talk.</p>
+                <div class="hero-ctas">
+                    <a href="mailto:hello@edsonafonso.com" class="btn btn-primary">Work With Me</a>
+                    <a href="https://linkedin.com/in/edson-afonso-2943702a0" target="_blank" class="btn btn-secondary">Follow the Journey</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif; margin-bottom: 15px;">Edson Afonso</h3>
+                <p class="footer-location">Angola · EU · Portugal (Incoming) · Global</p>
+                <div class="footer-links">
+                    <a href="mailto:hello@edsonafonso.com">Email</a>
+                    <a href="https://linkedin.com/in/edson-afonso-2943702a0" target="_blank">LinkedIn</a>
+                    <a href="https://youtube.com/@ThriveOn-r1r" target="_blank">ThriveOn</a>
+                    <a href="https://youtube.com/@ErdeRootsJournal" target="_blank">Erde Roots</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Edson Afonso. Clarity
