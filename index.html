@@ -1,888 +1,1275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edson Afonso — Systems Architect | Supply Chain & E-Commerce</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Edson Afonso — Systems Architect building a €1M digital business. Supply chain expertise, e-commerce strategy, and scalable systems for entrepreneurs. Based in Portugal.">
-    <meta name="keywords" content="systems architect, supply chain, e-commerce, entrepreneurship, business strategy, Portugal, Angola, digital business, ChainLogic">
-    <meta name="author" content="Edson Afonso">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://edsonafonso.com">
-    <meta property="og:title" content="Edson Afonso — Systems Architect | Supply Chain & E-Commerce">
-    <meta property="og:description" content="Building a €1M digital business from zero capital. Supply chain mastery, e-commerce strategy, and scalable systems for entrepreneurs.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop">
-    <meta property="og:site_name" content="Edson Afonso">
-    
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://edsonafonso.com">
-    <meta name="twitter:title" content="Edson Afonso — Systems Architect | Supply Chain & E-Commerce">
-    <meta name="twitter:description" content="Building a €1M digital business from zero capital. Supply chain mastery, e-commerce strategy, and scalable systems for entrepreneurs.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://edsonafonso.com">
-    
-    <!-- Structured Data (Schema.org) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Edson Afonso",
-        "url": "https://edsonafonso.com",
-        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-        "description": "Systems Architect building a €1M digital business. Supply chain expertise, e-commerce strategy, and scalable systems for entrepreneurs.",
-        "sameAs": [
-            "https://www.linkedin.com/in/edson-afonso-2943702a0",
-            "https://youtube.com/@ThriveOn-r1r",
-            "https://youtube.com/@ErdeRootsJournal"
-        ],
-        "jobTitle": "Systems Architect & Entrepreneur",
-        "location": {
-            "@type": "Place",
-            "name": "Aveiro, Portugal"
-        }
-    }
-    </script>
-    
-    <!-- System font stacks (no external dependencies) -->
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --bg: #03091A;
-            --surface: #071228;
-            --surface2: #0c1d3f;
-            --blue: #1B4FD8;
-            --blue-l: #4f8ff7;
-            --teal: #0D9488;
-            --teal-l: #2DD4BF;
-            --purple-l: #a78bfa;
-            --white: #EEF3FF;
-            --muted: #7a95b0;
-            --border: rgba(255,255,255,0.07);
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* Grid background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(31, 79, 216, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(31, 79, 216, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Navigation */
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            background: rgba(3, 9, 26, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--blue-l), var(--teal-l));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-        }
-        
-        nav ul {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        
-        nav a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 14px;
-            font-family: 'Courier New', Courier, monospace;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-        
-        nav a:hover {
-            color: var(--teal-l);
-        }
-        
-        .nav-cta {
-            padding: 8px 16px;
-            border: 1px solid var(--blue-l);
-            border-radius: 4px;
-            color: var(--blue-l);
-            transition: all 0.3s ease;
-        }
-        
-        .nav-cta:hover {
-            background: rgba(79, 143, 247, 0.1);
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(31, 79, 216, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: -1;
-        }
-        
-        .section-label {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
-            color: var(--muted);
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            display: inline-block;
-            text-transform: uppercase;
-        }
-        
-        h1 {
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--white) 0%, var(--blue-l) 50%, var(--teal-l) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .tagline {
-            font-size: 18px;
-            color: var(--muted);
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-        }
-        
-        .hero-ctas {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 14px 32px;
-            border-radius: 6px;
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            border: 1px solid transparent;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
-            color: var(--white);
-            box-shadow: 0 10px 30px rgba(31, 79, 216, 0.2);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(31, 79, 216, 0.3);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--teal-l);
-            border: 1px solid var(--teal-l);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(45, 212, 191, 0.1);
-        }
-        
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-            padding-top: 60px;
-            border-top: 1px solid var(--border);
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 36px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--blue-l), var(--teal-l));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .stat-label {
-            font-size: 12px;
-            color: var(--muted);
-            margin-top: 8px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        /* Section */
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        section h2 {
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 50px;
-            line-height: 1.2;
-        }
-        
-        .section-intro {
-            font-size: 16px;
-            color: var(--muted);
-            margin-bottom: 50px;
-            max-width: 600px;
-        }
-        
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 40px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--blue) 0%, var(--teal) 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--blue-l);
-            background: rgba(31, 79, 216, 0.05);
-        }
-        
-        .service-card:hover::after {
-            transform: scaleX(1);
-        }
-        
-        .service-icon {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        
-        .service-card h3 {
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .service-card p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        
-        /* Principles Grid */
-        .principles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-        
-        .principle {
-            border-left: 3px solid var(--blue-l);
-            padding-left: 30px;
-        }
-        
-        .principle h3 {
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .principle p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 40px;
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--teal-l);
-        }
-        
-        .project-tag {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 11px;
-            color: var(--teal-l);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .project-card h3 {
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .project-card p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        
-        .project-status {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
-            color: var(--blue-l);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding: 40px 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--blue) 0%, var(--teal) 100%);
-        }
-        
-        .timeline-item {
-            margin-bottom: 50px;
-            margin-left: 40px;
-            position: relative;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -48px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: var(--teal-l);
-            border-radius: 50%;
-            border: 3px solid var(--bg);
-        }
-        
-        .timeline-label {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
-            color: var(--teal-l);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-        
-        .timeline-item h3 {
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .timeline-item p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        
-        /* Ecosystem */
-        .ecosystem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .ecosystem-card {
-            background: linear-gradient(135deg, rgba(31, 79, 216, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 40px;
-            transition: all 0.3s ease;
-        }
-        
-        .ecosystem-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--teal-l);
-        }
-        
-        .ecosystem-card h3 {
-            font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .ecosystem-card p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        
-        .ecosystem-link {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
-            color: var(--blue-l);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .ecosystem-link:hover {
-            color: var(--teal-l);
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, rgba(31, 79, 216, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 80px 40px;
-            text-align: center;
-            margin: 80px 0;
-        }
-        
-        .cta-section h2 {
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 16px;
-            color: var(--muted);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Footer */
-        footer {
-            padding: 60px 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-        
-        .footer-content {
-            margin-bottom: 40px;
-        }
-        
-        .footer-location {
-            font-size: 14px;
-            color: var(--muted);
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-        
-        .footer-links a {
-            color: var(--muted);
-            text-decoration: none;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--teal-l);
-        }
-        
-        .footer-bottom {
-            font-size: 12px;
-            color: var(--muted);
-            border-top: 1px solid var(--border);
-            padding-top: 30px;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero, section {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-            
-            section h2 {
-                font-size: 32px;
-            }
-            
-            nav ul {
-                display: none;
-            }
-            
-            .hero {
-                padding: 60px 0;
-            }
-            
-            .hero-ctas {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .timeline::before {
-                left: -20px;
-            }
-            
-            .timeline-item {
-                margin-left: 20px;
-            }
-            
-            .timeline-item::before {
-                left: -28px;
-            }
-        }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Architecture of the Psyche · Edson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --gold:#D4A853;--gold2:#A07830;--gold3:#F0C878;
+  --bg:#07070D;--bg2:#0A0A12;--bg3:#0E0C09;
+  --surface:#11110A;--surface2:#161410;
+  --text:#E0D0B8;--text2:#B0A080;--text3:#706040;--text4:#40302A;
+  --border:#1E1A12;--border2:#2A2018;
+  --font-display:'Cinzel',serif;
+  --font-body:'EB Garamond',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);overflow-x:hidden;min-height:100vh;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--gold2);}
+
+/* ── NOISE OVERLAY ── */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity:0.5;
+}
+
+/* ── NAV ── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(7,7,13,0.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;height:52px;
+}
+.nav-brand{
+  font-family:var(--font-display);font-size:12px;letter-spacing:.3em;
+  color:var(--gold);text-shadow:0 0 20px rgba(212,168,83,.3);
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:2px;}
+.nav-btn{
+  background:transparent;border:none;
+  font-family:var(--font-display);font-size:9px;letter-spacing:.18em;
+  color:var(--text3);cursor:pointer;padding:8px 14px;
+  border-bottom:1px solid transparent;transition:all .2s;
+}
+.nav-btn:hover,.nav-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+.nav-portfolio{
+  font-family:var(--font-display);font-size:9px;letter-spacing:.18em;
+  color:var(--text4);text-decoration:none;padding:6px 12px;
+  border:1px solid var(--border2);transition:all .2s;
+}
+.nav-portfolio:hover{color:var(--gold);border-color:var(--gold2);}
+
+/* ── SECTIONS ── */
+.section{min-height:100vh;padding-top:52px;position:relative;z-index:1;}
+
+/* ── HERO ── */
+#hero{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:52px 24px 80px;min-height:100vh;
+  background:radial-gradient(ellipse 60% 50% at 50% 60%, rgba(212,168,83,.06) 0%, transparent 70%);
+}
+.hero-ornament{
+  width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);
+  margin:0 auto 32px;
+}
+.hero-tag{
+  font-family:var(--font-display);font-size:9px;letter-spacing:.35em;
+  color:var(--gold);border:1px solid rgba(212,168,83,.2);
+  padding:4px 16px;margin-bottom:32px;display:inline-block;
+}
+.hero-title{
+  font-family:'Cinzel Decorative',serif;
+  font-size:clamp(22px,5vw,52px);
+  color:var(--gold);letter-spacing:.06em;
+  text-shadow:0 0 60px rgba(212,168,83,.3);
+  line-height:1.2;margin-bottom:12px;
+}
+.hero-subtitle{
+  font-family:var(--font-display);font-size:clamp(11px,1.5vw,14px);
+  letter-spacing:.25em;color:var(--text3);margin-bottom:40px;
+}
+.hero-desc{
+  max-width:580px;font-size:clamp(16px,2vw,19px);line-height:1.9;
+  color:var(--text2);font-style:italic;margin-bottom:48px;
+}
+.hero-divider{
+  width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:0 auto 48px;
+}
+
+.tools-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;max-width:860px;width:100%;margin-bottom:60px;
+}
+.tool-card{
+  background:var(--surface);border:1px solid var(--border2);
+  padding:28px 24px;cursor:pointer;transition:all .25s;
+  text-align:left;position:relative;overflow:hidden;
+}
+.tool-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--c,#D4A853),transparent);
+  opacity:0;transition:opacity .25s;
+}
+.tool-card:hover{border-color:var(--border-hover,var(--border2));transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.4);}
+.tool-card:hover::before{opacity:1;}
+.card-num{
+  font-family:var(--font-display);font-size:9px;letter-spacing:.25em;
+  color:var(--text4);margin-bottom:12px;
+}
+.card-title{
+  font-family:var(--font-display);font-size:16px;letter-spacing:.1em;
+  margin-bottom:6px;
+}
+.card-sub{font-size:12px;color:var(--text3);font-style:italic;letter-spacing:.08em;margin-bottom:12px;}
+.card-desc{font-size:14px;line-height:1.75;color:var(--text3);}
+.card-arrow{
+  font-family:var(--font-display);font-size:9px;letter-spacing:.2em;
+  margin-top:16px;display:flex;align-items:center;gap:8px;
+}
+
+/* ── SECTION HEADER ── */
+.section-header{
+  text-align:center;padding:48px 24px 32px;
+  border-bottom:1px solid var(--border);
+  background:linear-gradient(to bottom,rgba(212,168,83,.04),transparent);
+}
+.section-header h2{
+  font-family:var(--font-display);font-size:clamp(16px,2.5vw,22px);
+  letter-spacing:.3em;color:var(--gold);margin-bottom:6px;
+}
+.section-header p{font-size:15px;color:var(--text3);font-style:italic;letter-spacing:.08em;}
+
+/* ── DIAGRAM CONTAINER ── */
+.diagram-wrap{
+  display:flex;flex-direction:row;flex-wrap:wrap;
+  gap:0;height:calc(100vh - 52px - 97px);min-height:500px;
+}
+.diagram-svg-area{
+  flex:0 0 auto;overflow:auto;
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:20px;
+}
+.diagram-info{
+  flex:1 1 280px;min-width:260px;max-width:380px;
+  border-left:1px solid var(--border);
+  display:flex;flex-direction:column;overflow-y:auto;
+  background:var(--bg2);
+}
+.info-top{
+  padding:24px 20px 16px;border-bottom:1px solid var(--border);position:relative;
+}
+.info-top::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--info-color,#D4A853),transparent);
+}
+.info-title{
+  font-family:var(--font-display);font-size:18px;letter-spacing:.08em;
+  margin-bottom:4px;line-height:1.2;
+}
+.info-sub{font-size:12px;font-style:italic;letter-spacing:.1em;color:var(--text3);margin-bottom:10px;}
+.info-summary{font-size:14px;line-height:1.75;color:var(--text2);font-style:italic;}
+.info-body{padding:16px 20px;flex:1;}
+.info-section{margin-bottom:18px;}
+.info-section-h{
+  font-family:var(--font-display);font-size:8px;letter-spacing:.22em;
+  color:var(--text4);margin-bottom:8px;display:flex;align-items:center;gap:6px;
+}
+.info-section-h::before{content:'';width:14px;height:1px;background:currentColor;display:inline-block;}
+.info-section-t{font-size:14px;line-height:1.8;color:var(--text2);white-space:pre-line;}
+.info-thinkers{padding:14px 20px;border-top:1px solid var(--border);}
+.info-thinkers-label{font-family:var(--font-display);font-size:8px;letter-spacing:.2em;color:var(--text4);margin-bottom:8px;}
+.thinker-tag{
+  display:inline-block;font-family:var(--font-display);font-size:10px;
+  padding:2px 9px;border:1px solid;letter-spacing:.06em;margin:2px;
+}
+
+/* ── ENCYCLOPEDIA ── */
+#enc-wrap{display:flex;height:calc(100vh - 52px - 97px);min-height:500px;}
+.enc-sidebar{
+  width:220px;flex-shrink:0;border-right:1px solid var(--border);
+  background:var(--bg2);display:flex;flex-direction:column;overflow:hidden;
+}
+.enc-search{
+  padding:10px 12px;border-bottom:1px solid var(--border);
+}
+.enc-search input{
+  width:100%;background:var(--surface);border:1px solid var(--border2);
+  color:var(--text2);font-family:var(--font-body);font-size:13px;
+  padding:6px 10px;outline:none;
+}
+.enc-search input::placeholder{color:var(--text4);}
+.enc-cats{padding:8px 0;border-bottom:1px solid var(--border);flex-shrink:0;}
+.enc-cat-btn{
+  width:100%;text-align:left;background:transparent;border:none;
+  border-left:2px solid transparent;
+  font-family:var(--font-display);font-size:9px;letter-spacing:.12em;
+  color:var(--text4);padding:5px 12px;cursor:pointer;
+  display:flex;justify-content:space-between;
+  transition:all .15s;
+}
+.enc-cat-btn:hover,.enc-cat-btn.active{color:var(--gold);border-left-color:var(--gold);}
+.enc-list{flex:1;overflow-y:auto;padding:6px 0;}
+.enc-entry-btn{
+  width:100%;text-align:left;background:transparent;border:none;
+  border-left:2px solid transparent;padding:7px 12px;
+  cursor:pointer;border-bottom:1px solid rgba(30,26,18,.5);
+  transition:all .15s;
+}
+.enc-entry-btn .et{
+  font-family:var(--font-display);font-size:10px;letter-spacing:.05em;
+  color:#907060;display:block;
+}
+.enc-entry-btn .es{font-size:10px;color:var(--text4);font-style:italic;display:block;margin-top:1px;}
+.enc-entry-btn.active .et,.enc-entry-btn:hover .et{color:var(--active-color,var(--gold));}
+.enc-entry-btn.active{border-left-color:var(--active-color,var(--gold));}
+
+.enc-main{flex:1;overflow-y:auto;padding:28px clamp(16px,4vw,48px);}
+.enc-main-inner{max-width:760px;}
+.enc-entry-header{margin-bottom:24px;}
+.enc-cat-tag{
+  font-family:var(--font-display);font-size:8px;letter-spacing:.22em;
+  border:1px solid;padding:2px 8px;display:inline-block;margin-bottom:12px;
+  opacity:.7;
+}
+.enc-entry-title{
+  font-family:var(--font-display);font-size:clamp(20px,3.5vw,34px);
+  letter-spacing:.05em;margin-bottom:6px;line-height:1.2;font-weight:600;
+}
+.enc-entry-sub{
+  font-size:17px;font-style:italic;letter-spacing:.05em;color:#806040;margin-bottom:16px;
+}
+.enc-entry-div{height:1px;background:linear-gradient(90deg,var(--entry-color,#D4A853),transparent);margin-bottom:16px;}
+.enc-entry-summary{font-size:17px;line-height:1.85;color:var(--text2);font-style:italic;}
+.enc-section{margin-bottom:26px;}
+.enc-section-h{
+  font-family:var(--font-display);font-size:9px;letter-spacing:.2em;
+  color:var(--entry-color,#D4A853);opacity:.8;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.enc-section-h::after{content:'';flex:1;height:1px;background:currentColor;opacity:.2;}
+.enc-section-t{font-size:15.5px;line-height:1.9;color:var(--text2);white-space:pre-line;}
+.enc-thinker-box{
+  background:var(--surface);border:1px solid;padding:14px 18px;
+  margin-bottom:20px;opacity:.8;
+}
+.enc-thinker-label{font-family:var(--font-display);font-size:8px;letter-spacing:.22em;color:var(--text4);margin-bottom:8px;}
+.enc-related{margin-top:4px;}
+.enc-related-label{font-family:var(--font-display);font-size:8px;letter-spacing:.22em;color:var(--text4);margin-bottom:8px;}
+.enc-related-btn{
+  background:transparent;border:1px solid;padding:3px 11px;
+  font-family:var(--font-display);font-size:9px;letter-spacing:.1em;
+  cursor:pointer;margin:2px;transition:all .15s;
+}
+
+/* ── FOOTER ── */
+#footer{
+  border-top:1px solid var(--border);
+  padding:32px 24px;text-align:center;
+  background:var(--bg2);position:relative;z-index:1;
+}
+.footer-name{font-family:var(--font-display);font-size:12px;letter-spacing:.3em;color:var(--gold);margin-bottom:8px;}
+.footer-copy{font-size:12px;color:var(--text4);letter-spacing:.1em;}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:.4;}50%{opacity:.9;}}
+.fade-up{animation:fadeUp .6s ease both;}
+.delay1{animation-delay:.1s;}.delay2{animation-delay:.2s;}.delay3{animation-delay:.3s;}.delay4{animation-delay:.4s;}
+
+/* ── NODE STYLES in SVG ── */
+.node-circle{cursor:pointer;transition:all .15s;}
+.node-circle:hover circle{filter:brightness(1.4);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .diagram-wrap,.enc-wrap,#enc-wrap{flex-direction:column;height:auto;}
+  .diagram-info,.enc-sidebar{width:100%;max-width:100%;border-left:none;border-top:1px solid var(--border);}
+  .enc-sidebar{height:auto;}
+  .nav-links{display:none;}
+}
+</style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">EA</a>
-                <nav>
-                    <ul>
-                        <li><a href="#services">SERVICES</a></li>
-                        <li><a href="#approach">APPROACH</a></li>
-                        <li><a href="#projects">PROJECTS</a></li>
-                        <li><a href="#ecosystem">ECOSYSTEM</a></li>
-                        <li><a href="#connect" class="nav-cta">CONNECT</a></li>
-                    </ul>
-                </nav>
-            </div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-brand">EDSON &nbsp;·&nbsp; SYSTEMS ARCHITECT</a>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="showSection('hero',this)">HOME</button>
+    <button class="nav-btn" onclick="showSection('libido',this)">LIBIDO</button>
+    <button class="nav-btn" onclick="showSection('psyche',this)">PSYCHE MAP</button>
+    <button class="nav-btn" onclick="showSection('encyclopedia',this)">ENCYCLOPEDIA</button>
+  </div>
+  <a href="#" class="nav-portfolio">← PORTFOLIO</a>
+</nav>
+
+<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<section id="hero" class="section">
+  <div style="max-width:900px;margin:0 auto;width:100%;padding:0 24px;">
+    <div class="hero-ornament fade-up"></div>
+    <div class="hero-tag fade-up delay1">RESEARCH COLLECTION · DEPTH PSYCHOLOGY</div>
+    <h1 class="hero-title fade-up delay2">The Architecture<br>of the Psyche</h1>
+    <div class="hero-subtitle fade-up delay2">EGO &nbsp;·&nbsp; COMPLEXES &nbsp;·&nbsp; LIBIDO &nbsp;·&nbsp; ARCHETYPES</div>
+    <div class="hero-divider fade-up delay3"></div>
+    <p class="hero-desc fade-up delay3">
+      An in-depth, scientifically grounded exploration of how psychic energy — libido — flows through the
+      structural layers of the human mind: from the unconscious drives of the Id,
+      through the complexes of the personal unconscious, to the archetypes of the collective unconscious
+      and the organizing axis of the Self.
+    </p>
+
+    <div class="tools-grid fade-up delay4">
+      <div class="tool-card" style="--c:#D4A853;--border-hover:rgba(212,168,83,.4);" onclick="showSection('libido',document.querySelector('.nav-btn:nth-child(2)'))">
+        <div class="card-num">01 &nbsp;·&nbsp; DIAGRAM</div>
+        <div class="card-title" style="color:#D4A853;">Libido Architecture</div>
+        <div class="card-sub">Drives, Manifestations & Polarities</div>
+        <div class="card-desc">An interactive three-ring diagram mapping libido from its primal roots through its nine manifestations and nine psychic polarities. Click any node to explore its depth.</div>
+        <div class="card-arrow" style="color:#D4A853;">EXPLORE <span>→</span></div>
+      </div>
+      <div class="tool-card" style="--c:#9A8ABB;--border-hover:rgba(154,138,187,.4);" onclick="showSection('psyche',document.querySelector('.nav-btn:nth-child(3)'))">
+        <div class="card-num">02 &nbsp;·&nbsp; DIAGRAM</div>
+        <div class="card-title" style="color:#9A8ABB;">Psyche Structure Map</div>
+        <div class="card-sub">Ego, Defenses, Complexes & Archetypes</div>
+        <div class="card-desc">A full cross-sectional map of the psyche across four geological strata — from consciousness through the repression barrier to the collective unconscious and the Id.</div>
+        <div class="card-arrow" style="color:#9A8ABB;">EXPLORE <span>→</span></div>
+      </div>
+      <div class="tool-card" style="--c:#7A9ABB;--border-hover:rgba(122,154,187,.4);" onclick="showSection('encyclopedia',document.querySelector('.nav-btn:nth-child(4)'))">
+        <div class="card-num">03 &nbsp;·&nbsp; ENCYCLOPEDIA</div>
+        <div class="card-title" style="color:#7A9ABB;">Encyclopaedia Psyche</div>
+        <div class="card-sub">44 Entries · Full Scientific Reference</div>
+        <div class="card-desc">A complete searchable encyclopedia of every node in the structure — with full definitions, mechanisms, neuroscientific correlates, and key thinkers for each concept.</div>
+        <div class="card-arrow" style="color:#7A9ABB;">EXPLORE <span>→</span></div>
+      </div>
+    </div>
+
+    <div style="font-family:var(--font-display);font-size:9px;letter-spacing:.2em;color:var(--text4);">
+      BASED ON FREUD · JUNG · ADLER · LACAN · KLEIN · WINNICOTT · BOWLBY · PANKSEPP · VAN DER KOLK
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ LIBIDO DIAGRAM ══════════════════════════════ -->
+<section id="libido" class="section" style="display:none;">
+  <div class="section-header">
+    <h2>THE ARCHITECTURE OF LIBIDO</h2>
+    <p>Psychic Life-Force · Its Drives, Manifestations & Polarities · Click any node to explore</p>
+  </div>
+  <div class="diagram-wrap">
+    <div class="diagram-svg-area">
+      <svg id="libido-svg" viewBox="0 0 740 760" style="display:block;width:min(500px,95vw);height:auto;" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+    <div class="diagram-info" id="libido-info">
+      <div class="info-top" style="--info-color:#D4A853;">
+        <div class="info-title" style="color:#D4A853;" id="li-title">LIBIDO</div>
+        <div class="info-sub" id="li-sub">Psychic Life-Force</div>
+        <div class="info-summary" id="li-summary">Select any node to explore its meaning, mechanism, and libidinal dimension.</div>
+      </div>
+      <div class="info-body" id="li-body">
+        <div style="padding:20px 0;color:var(--text4);font-size:13px;font-style:italic;text-align:center;">
+          Three rings of libidinal organization:<br><br>
+          <span style="color:#D4A853;">■</span> Center — Libido itself<br>
+          <span style="color:#C4715A;">■</span> Ring I — Primary Drives<br>
+          <span style="color:#8B6BB1;">■</span> Ring II — Manifestations<br>
+          <span style="color:#5A8C7A;">■</span> Ring III — Polarities & Defenses
         </div>
-    </header>
-    
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="section-label">Systems Architect — Building in Public</div>
-                <h1>Clarity in thinking.<br>Precision in structure.<br>Systems that scale.</h1>
-                <p class="tagline">I design and document structured approaches to e-commerce, supply chains, and business operations — building global systems from the ground up, one model at a time.</p>
-                <div class="hero-ctas">
-                    <a href="#projects" class="btn btn-primary">Explore My Work</a>
-                    <a href="https://www.linkedin.com/in/edson-afonso-2943702a0" target="_blank" class="btn btn-secondary">Follow My Journey</a>
-                </div>
-                <div class="stats">
-                    <div class="stat">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Brand Verticals</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Ambition</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">01</div>
-                        <div class="stat-label">Moment to Start</div>
-                    </div>
-                </div>
+      </div>
+      <div class="info-thinkers" id="li-thinkers" style="display:none;">
+        <div class="info-thinkers-label">KEY THINKERS</div>
+        <div id="li-thinkers-tags"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ PSYCHE MAP ══════════════════════════════ -->
+<section id="psyche" class="section" style="display:none;">
+  <div class="section-header">
+    <h2>THE STRUCTURE OF THE PSYCHE</h2>
+    <p>Ego · Defenses · Complexes · Archetypes · Click any node to explore · Switch between Map and Complex Formation</p>
+  </div>
+  <!-- Sub-tabs -->
+  <div style="display:flex;gap:2px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);">
+    <button id="ptab-map" onclick="setPsycheTab('map')" style="background:rgba(212,168,83,.1);border:none;border-bottom:1px solid #D4A853;color:#D4A853;font-family:var(--font-display);font-size:9px;letter-spacing:.15em;padding:6px 16px;cursor:pointer;">
+      STRUCTURAL MAP
+    </button>
+    <button id="ptab-form" onclick="setPsycheTab('form')" style="background:transparent;border:none;border-bottom:1px solid transparent;color:var(--text4);font-family:var(--font-display);font-size:9px;letter-spacing:.15em;padding:6px 16px;cursor:pointer;">
+      COMPLEX FORMATION
+    </button>
+  </div>
+
+  <!-- Map view -->
+  <div id="psyche-map-view">
+    <div class="diagram-wrap">
+      <div class="diagram-svg-area" style="overflow-y:auto;max-height:calc(100vh - 52px - 97px - 42px);">
+        <svg id="psyche-svg" viewBox="0 0 1000 970" style="display:block;width:min(580px,95vw);height:auto;" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="diagram-info" id="psyche-info">
+        <div class="info-top" style="--info-color:#E8C870;">
+          <div class="info-title" style="color:#E8C870;" id="pi-title">EGO</div>
+          <div class="info-sub" id="pi-sub">Center of Conscious Experience</div>
+          <div class="info-summary" id="pi-summary">Select any node in the map to explore its mechanism, formation, and libidinal dimension.</div>
+        </div>
+        <div class="info-body" id="pi-body">
+          <div style="padding:10px 0;">
+            <div style="font-family:var(--font-display);font-size:8px;letter-spacing:.22em;color:var(--text4);margin-bottom:12px;">LAYERS</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:50%;background:#E8C870;flex-shrink:0;"></div><span style="font-size:12px;color:var(--text4);font-style:italic;">Layer I — Consciousness</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:50%;background:#9A8ABB;flex-shrink:0;"></div><span style="font-size:12px;color:var(--text4);font-style:italic;">Repression Barrier</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:50%;background:#7A9ABB;flex-shrink:0;"></div><span style="font-size:12px;color:var(--text4);font-style:italic;">Layer II — Personal Unconscious</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:50%;background:#BB8A7A;flex-shrink:0;"></div><span style="font-size:12px;color:var(--text4);font-style:italic;">Layer III — Collective Unconscious</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:50%;background:#C4713A;flex-shrink:0;"></div><span style="font-size:12px;color:var(--text4);font-style:italic;">Layer IV — Id / Libido Source</span></div>
             </div>
-        </section>
-        
-        <section id="services">
-            <div class="container">
-                <h2>What I Do</h2>
-                <p class="section-intro">Designing systems that create clarity. Every service is built on the principle that structure precedes execution.</p>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">◁</div>
-                        <h3>E-commerce Systems</h3>
-                        <p>Structured approaches to building scalable commerce operations. From market validation to operational efficiency.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">◈</div>
-                        <h3>Supply Chain Architecture</h3>
-                        <p>Designing efficient, scalable logistics and supply networks. Building systems that optimize cost, speed, and reliability.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">✻</div>
-                        <h3>Sustainable Systems</h3>
-                        <p>Long-term wealth creation through asset-based systems. Building operations that generate compounding value over time.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="approach">
-            <div class="container">
-                <h2>How I Think</h2>
-                <p class="section-intro">The principles behind every decision. Most people rush to execution. I design the thinking before the action — because clarity at the foundation changes everything downstream.</p>
-                <div class="principles-grid">
-                    <div class="principle">
-                        <h3>Clarity before action</h3>
-                        <p>I break complexity into structured understanding before touching execution. Ambiguity is the enemy of scale.</p>
-                    </div>
-                    <div class="principle">
-                        <h3>Systems over shortcuts</h3>
-                        <p>Repeatable, scalable processes outlast any tactic. Every system I design is built to run without me.</p>
-                    </div>
-                    <div class="principle">
-                        <h3>Precision at every layer</h3>
-                        <p>Small structural decisions compound into large outcomes. Architecture matters as much as action.</p>
-                    </div>
-                    <div class="principle">
-                        <h3>Build in public</h3>
-                        <p>I learn, apply, and document transparently. Sharing the process creates trust and accelerates growth.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <p class="section-intro">Systems under construction. Each project is a real-world application of the principles above.</p>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-tag">E-Commerce</div>
-                        <h3>E-commerce System Blueprint</h3>
-                        <p>A structured approach to building an online business from scratch — product logic, supplier selection, and fulfilment flow mapped end-to-end.</p>
-                        <div class="project-status">In Progress</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Supply Chain</div>
-                        <h3>Supply Chain Model</h3>
-                        <p>Mapping efficient product flow across the China–Africa–Europe corridor. From source to shelf, every node designed for margin and scale.</p>
-                        <div class="project-status">In Progress</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Documentation</div>
-                        <h3>Build in Public Journal</h3>
-                        <p>A transparent record of learning, decision-making, and system iteration. The thinking behind the building — unfiltered.</p>
-                        <div class="project-status">Live Soon</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <div class="container">
-                <h2>System Maturity</h2>
-                <p class="section-intro">Building systems that compound. Each layer is designed to operate independently and generate sustainable value.</p>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-label">Phase 1</div>
-                        <h3>Foundation & Validation</h3>
-                        <p>Establishing core systems and validating market demand. Building the infrastructure that supports sustainable growth.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-label">Phase 2</div>
-                        <h3>Operational Scaling</h3>
-                        <p>Transitioning validated systems into repeatable, scalable operations. Multiple revenue streams becoming active and independent.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-label">Phase 3</div>
-                        <h3>Strategic Expansion</h3>
-                        <p>Expanding into adjacent markets and verticals. Leveraging existing systems to create new opportunities and revenue channels.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-label">Phase 4</div>
-                        <h3>Asset Multiplication</h3>
-                        <p>Building and acquiring assets that generate passive income. Creating multiple independent wealth-generation engines.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-label">Phase 5</div>
-                        <h3>Financial Sovereignty</h3>
-                        <p>Achieving complete financial independence and global portability. Teaching and sharing the systems that made it possible.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="ecosystem">
-            <div class="container">
-                <h2>Ecosystem</h2>
-                <p class="section-intro">Three brands. One architect. Each operates independently but shares the same system: clarity, structure, and long-term thinking.</p>
-                <div class="ecosystem-grid">
-                    <div class="ecosystem-card">
-                        <h3>ThriveOn</h3>
-                        <p>Self-mastery, discipline, and the philosophy of intentional growth. The mindset foundation that makes everything else possible.</p>
-                        <a href="https://youtube.com/@ThriveOn-r1r" target="_blank" class="ecosystem-link">YouTube Channel →</a>
-                    </div>
-                    <div class="ecosystem-card">
-                        <h3>ChainLogic</h3>
-                        <p>Structured systems for commerce and supply chain optimization. Building efficient, scalable operations across global markets.</p>
-                        <a href="https://chainlogic.com" target="_blank" class="ecosystem-link">Learn More →</a>
-                    </div>
-                    <div class="ecosystem-card">
-                        <h3>Erde Roots Journals</h3>
-                        <p>Exploring sustainable agricultural systems and long-term wealth creation through land-based assets and regenerative practices.</p>
-                        <a href="https://youtube.com/@ErdeRootsJournal" target="_blank" class="ecosystem-link">YouTube Channel →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="cta-section" id="connect">
-            <div class="container">
-                <h2>Let's Connect</h2>
-                <p>You don't need more information. You need a better system. If you're building something and need a strategic thinker who brings structure, clarity, and precision — let's talk.</p>
-                <div class="hero-ctas">
-                    <a href="mailto:hello@edsonafonso.com" class="btn btn-primary">Work With Me</a>
-                    <a href="https://www.linkedin.com/in/edson-afonso-2943702a0" target="_blank" class="btn btn-secondary">Follow the Journey</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3 style="font-family: 'IBM Plex Sans', 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-bottom: 15px;">Edson Afonso</h3>
-                <p class="footer-location">Angola · EU · Portugal (Incoming) · Global</p>
-                <div class="footer-links">
-                    <a href="mailto:hello@edsonafonso.com">Email</a>
-                    <a href="https://www.linkedin.com/in/edson-afonso-2943702a0" target="_blank">LinkedIn</a>
-                    <a href="https://youtube.com/@ThriveOn-r1r" target="_blank">ThriveOn</a>
-                    <a href="https://youtube.com/@ErdeRootsJournal" target="_blank">Erde Roots</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Edson Afonso. Clarity
+          </div>
+        </div>
+        <div class="info-thinkers" id="pi-thinkers" style="display:none;">
+          <div class="info-thinkers-label">KEY THINKERS</div>
+          <div id="pi-thinkers-tags"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formation view -->
+  <div id="psyche-form-view" style="display:none;padding:20px 24px;max-width:860px;margin:0 auto;">
+    <div id="formation-steps" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;"></div>
+    <div id="formation-detail" style="background:var(--surface);border:1px solid var(--border2);padding:28px;position:relative;"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ ENCYCLOPEDIA ══════════════════════════════ -->
+<section id="encyclopedia" class="section" style="display:none;">
+  <div class="section-header">
+    <h2>ENCYCLOPAEDIA PSYCHE</h2>
+    <p>44 Entries · Complete Scientific Reference · Searchable & Filterable</p>
+  </div>
+  <div id="enc-wrap">
+    <div class="enc-sidebar">
+      <div class="enc-search"><input id="enc-search-input" placeholder="Search entries..." oninput="filterEncyclopedia()"/></div>
+      <div class="enc-cats" id="enc-cats"></div>
+      <div class="enc-list" id="enc-list"></div>
+    </div>
+    <div class="enc-main">
+      <div class="enc-main-inner" id="enc-content"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-name">EDSON &nbsp;·&nbsp; SYSTEMS ARCHITECT</div>
+  <div class="footer-copy">The Architecture of the Psyche &nbsp;·&nbsp; A Depth Psychology Research Collection</div>
+</footer>
+
+<script>
+// ══════════════════════ NAVIGATION ══════════════════════
+const SECTIONS=['hero','libido','psyche','encyclopedia'];
+function showSection(id,btn){
+  SECTIONS.forEach(s=>{
+    document.getElementById(s).style.display=s===id?'':'none';
+  });
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  if(id==='libido'&&!libidoRendered)renderLibido();
+  if(id==='psyche'&&!psycheRendered)renderPsyche();
+  if(id==='encyclopedia'&&!encRendered)renderEncyclopedia();
+  window.scrollTo(0,0);
+}
+let libidoRendered=false,psycheRendered=false,encRendered=false;
+
+// ══════════════════════ LIBIDO DATA ══════════════════════
+const LIBIDO_DATA={
+  center:{id:'libido',label:'LIBIDO',subtitle:'Psychic Life-Force',color:'#D4A853',
+    desc:'From the Latin "desire." In psychoanalytic theory, libido is the fundamental life energy (Eros) that animates all human striving: creation, bonding, conquest, and transcendence. Freud understood it as primarily sexual energy; Jung expanded it into a universal psychic energy that flows through every dimension of human experience — sexual, creative, spiritual, intellectual, social, and beyond.',
+    libido:'Libido itself — the undifferentiated source of all psychic energy.',
+    thinkers:['Freud','Jung','Nietzsche']},
+  rings:[
+    {radius:140,nodes:[
+      {id:'eros',label:'Eros',angle:270,color:'#C4715A',subtitle:'Life Drive',
+        desc:'The fundamental drive toward life, connection, pleasure, and creation. Freud opposed it to Thanatos (the death drive). Eros encompasses all forms of love — sexual, familial, spiritual — and the desire to build, bond, and perpetuate life. At the archetypal level (Plato), Eros is the cosmic force of attraction drawing all things toward union.',
+        libido:'The primal life-force itself — libido as erotic energy seeking connection and creation.',thinkers:['Freud','Plato','Jung']},
+      {id:'thanatos',label:'Thanatos',angle:330,color:'#6B7A99',subtitle:'Death Drive',
+        desc:'The counterpart to Eros — the drive toward dissolution, destruction, rest, and return to the inorganic state. Manifests as aggression turned outward, or self-destruction turned inward. Freud proposed it in "Beyond the Pleasure Principle" (1920) to explain the repetition compulsion, traumatic neurosis, and masochism.',
+        libido:'Libido fused with Thanatos produces the destructive drives — aggression, self-sabotage, and the compulsion to repeat painful patterns.',thinkers:['Freud','Klein','Laplanche']},
+      {id:'will',label:'Will to\nPower',angle:30,color:'#8B6BB1',subtitle:'Expansion Drive',
+        desc:'Nietzsche\'s conception of the deepest human drive — not merely survival or pleasure, but the urge to grow, overcome, and impose form on chaos. Libido in its Nietzschean form is the energy behind mastery, creative destruction, and self-transcendence. Distinct from the power complex (which is compensatory): genuine Will to Power is the expression of surplus vitality.',
+        libido:'The will to power is sublimated libido at its most expansive — the drive toward self-overcoming rather than domination.',thinkers:['Nietzsche','Adler','Fromm']},
+      {id:'anima',label:'Anima /\nAnimus',angle:90,color:'#5A8C7A',subtitle:'Contra-sexual Energy',
+        desc:'Jung\'s archetypes of the contra-sexual soul. The Anima (feminine soul in men) and Animus (masculine soul in women) channel libidinal energy into depth, intuition, creativity, and the search for the "other." Projection of these onto partners is the root of romantic obsession and the mechanism of falling in love.',
+        libido:'The primary vehicle of erotic and spiritual libido — the channel through which Eros seeks the Other and the Self.',thinkers:['Jung','von Franz','Hillman']},
+      {id:'kundalini',label:'Kundalini',angle:150,color:'#B8860B',subtitle:'Serpent Energy',
+        desc:'In Tantric and yogic traditions, the primal life-force (Shakti) coiled at the base of the spine. When awakened, it rises through the chakras, transforming raw sexual energy into spiritual illumination. The closest Eastern equivalent to libido as total psychic energy. Modern researchers (Reich, Grof) have noted parallels to somatic energy release in body-oriented psychotherapy.',
+        libido:'The Hindu-Tantric name for the same primal life energy Freud called libido — with emphasis on its transformative spiritual potential.',thinkers:['Hindu Tantra','Aurobindo','Reich']},
+      {id:'libidoecon',label:'Libidinal\nEconomy',angle:210,color:'#7A6B5A',subtitle:'Energy Distribution',
+        desc:'The psychic "budget" of libidinal energy. Investment in objects (cathexis) and withdrawal (decathexis). When energy is over-invested in one domain (work, sex, fantasy) other domains are starved. The economy of desire shapes personality, neurosis, and creative output. Grief is the painful work of decathecting a lost object and reinvesting energy in new ones.',
+        libido:'The total system of libidinal distribution — how psychic energy is allocated, invested, and transformed across all domains of life.',thinkers:['Freud','Lyotard']},
+    ]},
+    {radius:270,nodes:[
+      {id:'sexual',label:'Sexual',angle:270,color:'#C4715A',subtitle:'Direct Expression',
+        desc:'The most direct channel of libido. Encompasses desire, arousal, fantasy, bonding through intimacy, and procreation. In Freudian theory, the original and primary form. When healthy: connected, vitalized, relational. When pathological: compulsive, dissociated, or completely suppressed. Wilhelm Reich showed that sexual health is the foundation of psychological health.',
+        libido:'Direct discharge of libido in sexual activity — the original aim of the drive before transformation or redirection.',thinkers:['Freud','Reich','Masters & Johnson']},
+      {id:'creative',label:'Creative',angle:308,color:'#D4A853',subtitle:'Sublimated Expression',
+        desc:'Art, music, writing, architecture, invention — all are libido redirected (sublimated) into cultural production. Freud believed civilization itself was built on sublimated sexuality. The creative act retains the same structure as desire: tension, climax, release. Many great artists describe creation as intensely erotic.',
+        libido:'Sublimated libido — sexual and aggressive energy genuinely transformed into cultural production.',thinkers:['Freud','Rank','May','Winnicott']},
+      {id:'spiritual',label:'Spiritual',angle:348,color:'#8B6BB1',subtitle:'Transcendent Expression',
+        desc:'Mystical longing, religious devotion, the drive toward union with the absolute. Both Freud (cautiously) and Jung (centrally) recognized the libidinal substrate of spiritual experience. The "oceanic feeling" of religious ecstasy shares its neurobiology with sexual ecstasy. Celibate mystics often describe divine love in intensely erotic language.',
+        libido:'Libido seeking its ultimate object — the transcendent — rather than a personal other. Spiritual desire is Eros at maximum amplitude.',thinkers:['Jung','James','Bataille']},
+      {id:'aggressive',label:'Aggressive',angle:30,color:'#9B4444',subtitle:'Power Expression',
+        desc:'Libido fused with the Thanatos drive produces aggression — the force to dominate, compete, destroy obstacles, and assert boundaries. In healthy doses: ambition, competitive drive, the capacity to fight for what matters. When pathological: violence, sadism, dominance addiction. Healthy aggression is the assertion of legitimate needs; pathological aggression is the displacement of unresolved drive energy.',
+        libido:'Libido fused with Thanatos — destructive energy that, when integrated, becomes the assertive force of healthy boundary-setting.',thinkers:['Freud','Fromm','Winnicott']},
+      {id:'social',label:'Social',angle:70,color:'#5A8C7A',subtitle:'Bonding Expression',
+        desc:'The libidinal energy invested in friendships, communities, tribes, ideologies, and nations. Group psychology runs on redirected libido — the charismatic leader receives the libidinal projections of the crowd. Love of country, devotion to a cause, tribal loyalty — all are libido in social form. Freud analyzed group psychology through libidinal bonds in his 1921 work.',
+        libido:'Social libido — the investment of erotic and identificatory energy in other persons, groups, and collective identities.',thinkers:['Freud','Le Bon','Reich']},
+      {id:'intellectual',label:'Intellectual',angle:110,color:'#5A6B8C',subtitle:'Epistemic Expression',
+        desc:'The drive to know, understand, master concepts, and penetrate mystery. Freud called this "epistemic drive" (Wisstrieb) — a libidinal investment in ideas. The passion of the philosopher, the obsession of the scientist, the hunger of the student — all carry an erotic charge. Ideas, for the intellectual, are objects of desire.',
+        libido:'Intellectual libido — Eros applied to the domain of ideas, producing the passionate pursuit of knowledge and understanding.',thinkers:['Freud','Lacan','Foucault']},
+      {id:'economic',label:'Economic /\nStatus',angle:150,color:'#8B7355',subtitle:'Resource Expression',
+        desc:'The libidinal investment in wealth, status, possessions, and social rank. Accumulation as displaced sexuality. The drive to provide, to dominate resource hierarchies, to display surplus — all are the sexual selection drive in economic clothing. Money, status symbols, and power carry genuine libidinal charge for the inferiority-complex-driven psyche.',
+        libido:'Narcissistic and social libido invested in rank, resources, and status symbols — seeking to close the gap between actual self and ego ideal.',thinkers:['Veblen','Fromm','Bataille']},
+      {id:'narcissistic',label:'Narcissistic',angle:190,color:'#7A5A8C',subtitle:'Self-directed Expression',
+        desc:'Libido directed back toward the self — self-love, self-cultivation, pride, the investment in one\'s own image and identity. Primary narcissism (healthy self-care) vs. secondary narcissism (pathological self-absorption). Kohut showed that healthy narcissism requires mirroring in early development.',
+        libido:'Narcissistic libido — energy invested in the self, its image, and its development; the foundation of self-esteem and personal ambition.',thinkers:['Freud','Kohut','Kernberg']},
+      {id:'aesthetic',label:'Aesthetic',angle:230,color:'#B8860B',subtitle:'Beauty Expression',
+        desc:'The erotic charge of beauty — visual, sonic, tactile. The capacity to be arrested by beauty is a libidinal faculty. Stendhal\'s theory of "crystallization" (romantic idealization) and Keats\' "Beauty is Truth" both point to the deep entanglement of libido and aesthetic experience. The beautiful object calls to us with a force structurally identical to sexual desire.',
+        libido:'Aesthetic libido — the eros of beauty, the charged response to form, color, sound, and proportion that is structurally analogous to sexual desire.',thinkers:['Plato','Stendhal','Nietzsche']},
+    ]},
+    {radius:390,nodes:[
+      {id:'sublimation',label:'Sublimation',angle:280,color:'#D4A853',subtitle:'↑ Highest Defense',
+        desc:'The redirection of libidinal energy from its original (usually sexual or aggressive) aim toward culturally valued, non-sexual goals. Freud\'s "highest" defense mechanism. The energy is not suppressed — it is genuinely transformed. Art, science, philosophy, and civilization are the monuments of sublimation.',
+        libido:'Successfully transforms bound libido into free, mobile energy — the only defense that liberates rather than constrains.',thinkers:['Freud','Rank','May']},
+      {id:'repression',label:'Repression',angle:315,color:'#6B5A5A',subtitle:'↓ Burial',
+        desc:'The unconscious exclusion of unacceptable desires from awareness. The energy doesn\'t disappear — it returns as symptoms: anxiety, neurosis, psychosomatic illness, compulsion. The repressed always returns. Freud\'s foundational discovery: civilization\'s demand for repression generates neurosis.',
+        libido:'Binds libido into complexes — creates "dammed" psychic reservoirs of frozen energy unavailable for conscious use.',thinkers:['Freud','Breuer','Anderson & Green']},
+      {id:'proj2',label:'Projection',angle:352,color:'#5A6B8C',subtitle:'← Externalizing',
+        desc:'Attributing one\'s own unacknowledged desires to others. The man who condemns sexual "degeneracy" most ferociously is often most tormented by his own desires. Projection is libido denied at home and seen abroad. At scale, it produces witch hunts, moral panics, and the demonization of the "other."',
+        libido:'Transfers the libidinal charge of a complex onto external objects — people become screens for our inner life.',thinkers:['Freud','Jung','Klein']},
+      {id:'integration',label:'Integration',angle:40,color:'#5A8C7A',subtitle:'↕ Individuation',
+        desc:'Jung\'s highest psychological goal: the union of conscious and shadow, masculine and feminine, Eros and Logos. In the integrated psyche, libido flows freely through all its channels — none suppressed, none compulsive. The energy serves the whole person. This is the process Jung called Individuation.',
+        libido:'Freed libido — energy liberated from complexes and defenses, flowing freely through all channels in service of the whole person.',thinkers:['Jung','Edinger','Neumann']},
+      {id:'fixation',label:'Fixation',angle:80,color:'#9B4444',subtitle:'⟲ Arrested Development',
+        desc:'The arrest of libidinal development at an early stage. Energy remains bound to an infantile mode — oral, anal, phallic — producing characteristic character structures. Wilhelm Reich mapped these into the body itself: muscular armoring as frozen, unprocessed libido that must be addressed somatically.',
+        libido:'Libido frozen at a developmental stage — the psychic equivalent of a blocked river, building pressure behind an early fixation.',thinkers:['Freud','Reich','Abraham']},
+      {id:'cathexis2',label:'Cathexis',angle:120,color:'#8B6BB1',subtitle:'→ Investment',
+        desc:'The psychic "charging" of an object with libidinal energy — a person, idea, activity, or symbol becomes intensely meaningful. Hypercathexis: obsessive over-investment. Decathexis: withdrawal of investment, experienced as grief or numbness. Love is cathexis at its most intense. Grief is the painful work of decathexis.',
+        libido:'The mechanism of libidinal investment — how and where psychic energy attaches to objects and infuses them with emotional significance.',thinkers:['Freud']},
+      {id:'shadow2',label:'Shadow',angle:160,color:'#4A4A6A',subtitle:'↓ Dark Manifestation',
+        desc:'The denied, unintegrated portion of the libidinal drive. What is excluded from the conscious personality accumulates in the shadow. The shadow\'s sexual and aggressive energies don\'t vanish — they erupt, sabotage, and project. Confronting the shadow is prerequisite to genuine integration.',
+        libido:'Reservoir of bound libido — all the repressed sexual, aggressive, and creative energy that was excluded from the conscious personality.',thinkers:['Jung','Bly','R. Johnson']},
+      {id:'transcendence2',label:'Transcendence',angle:200,color:'#C4A0D4',subtitle:'↑ Peak Expression',
+        desc:'The apex of libidinal development in mystical and philosophical traditions — the dissolution of the self-boundary in union with something greater. Whether sexual (Tantric union), creative (artistic ecstasy), or spiritual (mystical union), transcendence is libido at its maximum amplitude, breaking through the container of the individual ego.',
+        libido:'Libido at maximum amplitude — the eros of dissolution, where the drive toward union culminates in the dissolution of the boundary between self and world.',thinkers:['Maslow','Jung','Bataille']},
+      {id:'neurosis2',label:'Neurotic\nBinding',angle:240,color:'#6B5A4A',subtitle:'⟲ Trapped Energy',
+        desc:'When libidinal energy cannot flow freely (due to repression, fixation, or conflict), it becomes bound in neurotic symptoms: anxiety, phobias, obsessions, depression. The symptom is a compromise formation — a disguised expression of the repressed desire. Neurosis is frozen libido seeking a way out.',
+        libido:'Libido trapped in symptomatic channels — the energy of the drive expressing itself through distorted, disguised, and costly symptom formations.',thinkers:['Freud','Horney','Reich']},
+    ]},
+  ]
+};
+
+// ══════════════════════ RENDER LIBIDO SVG ══════════════════════
+function renderLibido(){
+  const svg=document.getElementById('libido-svg');
+  const CX=370,CY=390;
+  const nodes=LIBIDO_DATA;
+  let html='';
+
+  // Defs
+  html+=`<defs>
+    <filter id="lg"><feGaussianBlur stdDeviation="4" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+    <radialGradient id="cg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4A853" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#D4A853" stop-opacity="0"/>
+    </radialGradient>
+    <style>.n:hover circle{stroke-width:2;filter:url(#lg);}</style>
+  </defs>`;
+
+  // BG
+  html+=`<circle cx="${CX}" cy="${CY}" r="410" fill="#08080E"/>`;
+  html+=`<circle cx="${CX}" cy="${CY}" r="410" fill="none" stroke="#D4A85312" stroke-width="1"/>`;
+
+  // Orbit rings
+  nodes.rings.forEach((ring,ri)=>{
+    const colors=['#D4A85320','#C4715A15','#8B6BB112'];
+    html+=`<circle cx="${CX}" cy="${CY}" r="${ring.radius}" fill="none" stroke="${colors[ri]}" stroke-width="1" stroke-dasharray="4 8"/>`;
+  });
+
+  // Spokes from center to ring 1
+  nodes.rings[0].nodes.forEach(n=>{
+    const pos=polarXY(CX,CY,nodes.rings[0].radius,n.angle);
+    html+=`<line x1="${CX}" y1="${CY}" x2="${pos.x}" y2="${pos.y}" stroke="${n.color}25" stroke-width="1"/>`;
+  });
+
+  // Links ring1→ring2
+  nodes.rings[1].nodes.forEach(n2=>{
+    const p2=polarXY(CX,CY,nodes.rings[1].radius,n2.angle);
+    const closest=nodes.rings[0].nodes.reduce((b,n)=>angDiff(n.angle,n2.angle)<angDiff(b.angle,n2.angle)?n:b);
+    const p1=polarXY(CX,CY,nodes.rings[0].radius,closest.angle);
+    html+=`<line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke="${n2.color}20" stroke-width="1"/>`;
+  });
+
+  // Links ring2→ring3
+  nodes.rings[2].nodes.forEach(n3=>{
+    const p3=polarXY(CX,CY,nodes.rings[2].radius,n3.angle);
+    const closest=nodes.rings[1].nodes.reduce((b,n)=>angDiff(n.angle,n3.angle)<angDiff(b.angle,n3.angle)?n:b);
+    const p2=polarXY(CX,CY,nodes.rings[1].radius,closest.angle);
+    html+=`<line x1="${p2.x}" y1="${p2.y}" x2="${p3.x}" y2="${p3.y}" stroke="${n3.color}18" stroke-width="1"/>`;
+  });
+
+  // Center glow
+  html+=`<circle cx="${CX}" cy="${CY}" r="90" fill="url(#cg)"/>`;
+
+  // Center node
+  html+=`<g class="n" onclick="showLibidoNode(null)" style="cursor:pointer">
+    <circle cx="${CX}" cy="${CY}" r="58" fill="#0A0A10" stroke="#D4A853" stroke-width="1.5" filter="url(#lg)"/>
+    <circle cx="${CX}" cy="${CY}" r="50" fill="none" stroke="#D4A85340" stroke-width="1" stroke-dasharray="3 5"/>
+    <text x="${CX}" y="${CY-7}" text-anchor="middle" fill="#D4A853" font-size="14" font-family="Cinzel,serif" letter-spacing="2">LIBIDO</text>
+    <text x="${CX}" y="${CY+10}" text-anchor="middle" fill="#A09070" font-size="9" font-family="EB Garamond,serif" font-style="italic">Psychic Life-Force</text>
+  </g>`;
+
+  // Ring nodes
+  nodes.rings.forEach((ring,ri)=>{
+    ring.nodes.forEach(node=>{
+      const pos=polarXY(CX,CY,ring.radius,node.angle);
+      const r=[24,30,26][ri];
+      const fs=[11,10,9][ri];
+      const lines=node.label.split('\n');
+      html+=`<g class="n" onclick="showLibidoNode('${node.id}')" style="cursor:pointer">
+        <circle cx="${pos.x}" cy="${pos.y}" r="${r+8}" fill="${node.color}08" stroke="transparent" stroke-width="1"/>
+        <circle cx="${pos.x}" cy="${pos.y}" r="${r}" fill="#0A0A10" stroke="${node.color}" stroke-width="1"/>
+        ${lines.map((line,li)=>`<text x="${pos.x}" y="${pos.y+((li-(lines.length-1)/2)*11)+1}" text-anchor="middle" dominant-baseline="middle" fill="${node.color}" font-size="${fs}" font-family="Cinzel,serif" letter-spacing="0.5">${line}</text>`).join('')}
+      </g>`;
+    });
+  });
+
+  svg.innerHTML=html;
+  libidoRendered=true;
+}
+
+function showLibidoNode(id){
+  let node;
+  if(!id){node=LIBIDO_DATA.center;}
+  else{
+    LIBIDO_DATA.rings.forEach(r=>r.nodes.forEach(n=>{if(n.id===id)node=n;}));
+  }
+  if(!node)return;
+  const c=node.color||'#D4A853';
+  document.querySelector('#libido-info .info-top').style.setProperty('--info-color',c);
+  document.getElementById('li-title').textContent=node.label?.replace('\n',' ')||'LIBIDO';
+  document.getElementById('li-title').style.color=c;
+  document.getElementById('li-sub').textContent=node.subtitle||'';
+  document.getElementById('li-summary').textContent='';
+  document.getElementById('li-body').innerHTML=`
+    <div class="info-section">
+      <div class="info-section-h" style="color:${c}">DESCRIPTION</div>
+      <div class="info-section-t">${node.desc||''}</div>
+    </div>
+    <div class="info-section" style="background:var(--surface);border:1px solid ${c}20;padding:10px 14px;margin-top:4px;">
+      <div class="info-section-h" style="color:${c}">LIBIDINAL RESONANCE</div>
+      <div class="info-section-t" style="font-style:italic;color:#A09060;">${node.libido||''}</div>
+    </div>
+  `;
+  const tt=document.getElementById('li-thinkers');
+  const ttags=document.getElementById('li-thinkers-tags');
+  if(node.thinkers&&node.thinkers.length){
+    tt.style.display='';
+    ttags.innerHTML=node.thinkers.map(t=>`<span class="thinker-tag" style="color:${c};border-color:${c}40">${t}</span>`).join('');
+  }else{tt.style.display='none';}
+}
+
+// ══════════════════════ PSYCHE MAP DATA ══════════════════════
+const PSYCHE_NODES=[
+  {id:'persona',label:'Persona',x:165,y:115,r:28,color:'#C8A060',
+    subtitle:'The Social Mask',
+    desc:'Jung\'s term for the mask worn in the social theater — the sum of roles, status markers, and behavioral scripts adopted to navigate collective life. Built from libidinal investment in social acceptance. Over-identification with the persona hollows the psyche: the man becomes the mask. Status symbols are persona accessories.',
+    libido:'Social and narcissistic libido — the energy of social performance and identity maintenance.',thinkers:['Jung','Goffman']},
+  {id:'ego',label:'EGO',x:500,y:120,r:50,color:'#E8C870',
+    subtitle:'Center of Consciousness',
+    desc:'The "I" — the center of conscious experience, voluntary action, and reality-testing. Freud\'s ego mediates between the Id\'s demands (raw libido), the Superego\'s prohibitions, and external reality. It operates on the reality principle using secondary process (logical, delay-tolerant) thought.\n\nJung distinguished the ego from the Self: the ego is only the center of consciousness, not the center of the whole psyche. Psychological maturity requires the ego to surrender its centrality to the larger organizing principle of the Self.',
+    libido:'Narcissistic libido (self-investment) + object libido (investment in the world) — the ego governs the distribution of psychic energy.',thinkers:['Freud','Jung','Hartmann','Kohut']},
+  {id:'superego',label:'Superego',x:835,y:115,r:32,color:'#A08048',
+    subtitle:'Internalized Authority',
+    desc:'The internalization of parental and cultural prohibition and aspiration. Two poles: the conscience (punishing, shame/guilt-producing) and the ego ideal (the aspired self-image). Forms through identification — the child internalizes the parent\'s commands to preserve the love bond. A harsh superego is one where aggression toward the parent was reversed and internalized.',
+    libido:'Identification libido — frozen relational energy from the parent bond, become internal authority and moral regulation.',thinkers:['Freud','Klein','Lacan']},
+  {id:'ego_ideal',label:'Ego\nIdeal',x:665,y:88,r:22,color:'#B09858',
+    subtitle:'The Aspired Self',
+    desc:'The positive pole of the superego — the idealized image of the self as it should be. All striving, all status-seeking, all self-improvement contains the hidden energy of the gap between actual self and ideal self. The sports car, the physique, the title — these are attempts to close the gap and restore narcissistic wholeness.',
+    libido:'Primary site of narcissistic libido investment — all striving is partly an attempt to become the ego ideal.',thinkers:['Freud','Lacan','Kohut']},
+  {id:'repression2',label:'Repression',x:100,y:258,r:21,color:'#8A7A9A',
+    subtitle:'Primary Defense',
+    desc:'The active exclusion of unacceptable thoughts, impulses, and memories from consciousness. The material remains dynamically active in the unconscious, consuming libido and seeking expression. This is the primary mechanism of complex formation: repression + libidinal fixation = complex.',
+    libido:'Binds libido into complexes — creates "dammed" psychic reservoirs of frozen energy.',thinkers:['Freud','Breuer','Anderson & Green']},
+  {id:'projection2',label:'Projection',x:270,y:258,r:20,color:'#6A7A9A',
+    subtitle:'Externalizing Defense',
+    desc:'Attributes one\'s own unacknowledged impulses or complex content to another person. The man with an unintegrated power complex sees manipulation in everyone. The woman with an unexamined animus projects it onto men — falling in love with her own soul-image in masculine form.',
+    libido:'Transfers the libidinal charge of a complex onto external objects — people become screens for our inner life.',thinkers:['Freud','Jung','Klein']},
+  {id:'sublim2',label:'Sublimation',x:455,y:258,r:20,color:'#6A9A7A',
+    subtitle:'Highest Defense',
+    desc:'Redirects libidinal and aggressive drive energy from their original aim toward culturally valued non-sexual goals. Unlike repression, sublimation genuinely transforms the energy. Art, science, philosophy, athletic mastery — all can be sublimated expressions of libido.',
+    libido:'Successfully transforms bound complex energy into free, mobile libido — the only defense that liberates rather than constrains.',thinkers:['Freud','Rank','May']},
+  {id:'displac',label:'Displacement',x:635,y:258,r:20,color:'#9A8A6A',
+    subtitle:'Redirect Defense',
+    desc:'Redirects libidinal or aggressive energy from its original charged object to a safer substitute. The emotional intensity of a complex is preserved but aimed elsewhere. Phobias often involve displacement — the true source of anxiety is relocated to a neutral object.',
+    libido:'Relocates complex libido without transforming or resolving it — same charge, different target.',thinkers:['Freud']},
+  {id:'react_form',label:'Reaction\nFormation',x:860,y:258,r:21,color:'#9A6A6A',
+    subtitle:'Inversion Defense',
+    desc:'Transforms an unacceptable impulse into its opposite. The person not only represses the original feeling but develops the contrary attitude with exaggerated intensity. The intensity of the surface attitude is directly proportional to the force of the repressed impulse.',
+    libido:'Complex libido is inverted — the same charge powers the opposite of the original impulse.',thinkers:['Freud','A. Freud','Reich']},
+  {id:'shadow_c',label:'Shadow\nComplex',x:140,y:388,r:34,color:'#4A5A7A',
+    subtitle:'The Rejected Self',
+    desc:'Contains everything the ego has refused to acknowledge — rejected qualities, suppressed impulses, unrealized potentials. Includes "golden shadow" (beauty, power, greatness the person disowns). A massive reservoir of bound libido — all the vitality, sexual energy, aggression, and creative force suppressed in childhood to maintain love and social acceptance.',
+    libido:'Largest reservoir of bound libido — contains repressed sexual, aggressive, and creative energy waiting for integration.',thinkers:['Jung','Bly','R. Johnson']},
+  {id:'mother_c',label:'Mother\nComplex',x:330,y:418,r:30,color:'#7A5A4A',
+    subtitle:'The Primal Bond',
+    desc:'Forms around the experience of the maternal figure — the actual mother plus the archetypal Great Mother activated by that relationship. The personal always draws on the transpersonal, which is why mother wounds run so deep. The original bond with the mother is the first template for all subsequent love — the prototype of all cathexis.',
+    libido:'Contains the first and deepest object-libido investment — the original cathexis, template for all love.',thinkers:['Jung','Freud','Winnicott','Klein']},
+  {id:'inferiority_c',label:'Inferiority\nComplex',x:478,y:345,r:28,color:'#6A5A3A',
+    subtitle:'The Wounded Rank',
+    desc:'Adler\'s foundational insight: every human experiences inferiority. The inferiority complex forms when this becomes a fixed organizing principle. It is the wound that makes status symbols into libidinal objects — the man charging his identity with luxury goods is enacting his inferiority complex, seeking to close the gap between actual self and ego ideal.',
+    libido:'Fuels all status-seeking — bound narcissistic libido seeking restoration through external symbols of rank.',thinkers:['Adler','Freud','Horney']},
+  {id:'father_c',label:'Father\nComplex',x:635,y:418,r:30,color:'#5A6A4A',
+    subtitle:'The Authority Imprint',
+    desc:'Forms around the paternal figure and the archetypal Father — law, order, structure, prohibition, and transcendence. The father is the first representative of external reality and the reality principle. In men: shapes the relationship to authority, ambition, and masculine identity. In women: shapes the animus and the pattern of relationship to male partners.',
+    libido:'Contains the libido of identification and rivalry — the first experience of prohibition is the template for all subsequent law.',thinkers:['Freud','Jung','Bly','Corneau']},
+  {id:'power_c',label:'Power\nComplex',x:810,y:368,r:28,color:'#6A4A5A',
+    subtitle:'The Domination Drive',
+    desc:'Organizes libidinal energy around the drive to control, dominate, and assert superiority. Frequently compensatory — the most power-hungry are often most tormented by powerlessness. When the power complex possesses the ego, all relationships are experienced as dominance hierarchies and all situations as contests.',
+    libido:'Redirected aggression and narcissistic libido organized around dominance — compensatory energy seeking control over others.',thinkers:['Adler','Jung','Fromm']},
+  {id:'anima_c',label:'Anima /\nAnimus',x:800,y:478,r:32,color:'#5A6A7A',
+    subtitle:'The Inner Beloved',
+    desc:'The anima (in men) is the feminine soul-image built from the mother imprint, cultural images, and the archetypal feminine principle. When unconscious, it is projected onto partners — we "fall in love" with the image we carry inside. The intensity of falling in love is proportional to the charge of the projected anima/animus.',
+    libido:'Primary vehicle for erotic and spiritual libido — the channel through which Eros seeks the Other.',thinkers:['Jung','von Franz','Hillman']},
+  {id:'hero_c',label:'Hero\nComplex',x:210,y:481,r:26,color:'#7A6A4A',
+    subtitle:'The Savior Identity',
+    desc:'Forms when the ego identifies with the archetypal Hero. Positive: genuine courage, initiative. Pathological: savior fantasies, inability to receive help, contempt for weakness, compulsive self-sacrifice. The hero complex is one of the most common forms of ego inflation — the ego borrows the transpersonal energy of an archetype.',
+    libido:'Channels aggressive and spiritual libido into achievement — compensates inferiority with archetypal power.',thinkers:['Jung','Campbell','Rank']},
+  {id:'creative_c',label:'Creative\nComplex',x:478,y:483,r:25,color:'#5A7A6A',
+    subtitle:'The Maker Drive',
+    desc:'The constellation of drives, images, and energies organized around making. It feeds on sublimated libido and receives archetypal fuel from the trickster (subversion), the anima/animus (inspiration), and sometimes the shadow (the darkness that makes authentic creation possible). Creative flow is the free circulation of libido through the creative complex.',
+    libido:'Sublimated Eros — sexual and spiritual libido transformed into cultural production.',thinkers:['Rank','May','Winnicott','Csikszentmihalyi']},
+  {id:'self_a',label:'THE SELF',x:500,y:658,r:48,color:'#D4A050',
+    subtitle:'Archetype of Wholeness',
+    desc:'Jung\'s name for the central organizing archetype — not the ego but the totality of the psyche, conscious and unconscious. The ego-Self axis is the central dynamic of mental health: a strong axis means the ego is in living contact with the deeper source of vitality and meaning. Inflation occurs when the ego identifies with the Self; alienation when the axis is severed (emptiness, depression, addiction).',
+    libido:'The destination of integrated libido — energy freely circulating through all psychic systems in service of the whole.',thinkers:['Jung','Edinger','Neumann','Solms']},
+  {id:'shadow_a',label:'Shadow\nArch.',x:190,y:635,r:30,color:'#3A4A6A',
+    subtitle:'Dark Archetype',
+    desc:'At the collective level, the Shadow is the universal dark principle — the necessary darkness in all life. The archetypal shadow contains tremendous creative energy — the darkness that fertilizes, the chaos from which new order emerges. Every civilization\'s scapegoating and persecution is collective archetypal shadow projection.',
+    libido:'Archetypal substrate of bound libido — raw undifferentiated energy of the instincts before differentiation.',thinkers:['Jung','Neumann','Sanford']},
+  {id:'anima_a',label:'Anima /\nAnimus\nArch.',x:790,y:635,r:30,color:'#4A5A7A',
+    subtitle:'Soul Archetype',
+    desc:'At the archetypal level, the Anima and Animus are the universal contra-sexual principles. The Anima in men descends through four levels: Eve (biological desire), Helen (romantic ideal), Mary (spiritual devotion), Sophia (wisdom). The Animus in women: physical man → romantic hero → spiritual guide → wisdom figure.',
+    libido:'Transpersonal Eros — the archetypal channel of the drive toward union with the Other, the Whole.',thinkers:['Jung','Hillman','von Franz']},
+  {id:'great_m',label:'Great\nMother',x:310,y:752,r:28,color:'#7A5A3A',
+    subtitle:'Nurture & Devouring',
+    desc:'The primordial feminine archetype — the one who gives and takes life. Two poles: the good mother (nourishing, containing, protecting) and the terrible mother (devouring, binding, suffocating). The mother complex is anchored in this archetype. The intensity of mother wounds exceeds what any personal mother could produce — it draws energy from the collective layer.',
+    libido:'The archetypal substrate of all object-libido — the original erotic-spiritual bond with being itself.',thinkers:['Jung','Neumann','Bachofen']},
+  {id:'wise_old',label:'Wise\nOld Man',x:690,y:752,r:28,color:'#5A6A3A',
+    subtitle:'Logos & Wisdom',
+    desc:'The archetypal masculine principle of wisdom, order, and transcendence. Appears in dreams as the guide, the hermit, the wizard, the sage. His shadow (the Senex\'s shadow) is the tyrant — rigid authority that cannot change. The longing for a mentor, a sage, a wise teacher is the constellation of the Wise Old Man archetype.',
+    libido:'Spiritual libido channeled through the paternal complex toward transcendence and meaning-making.',thinkers:['Jung','von Franz','Hillman','Moore']},
+  {id:'hero_a',label:'Hero\nArch.',x:120,y:733,r:26,color:'#7A6A3A',
+    subtitle:'Consciousness Emerging',
+    desc:'The Hero archetype represents the emergence of consciousness from the unconscious — the ego\'s differentiation from the primal matrix. Campbell\'s monomyth is the psyche\'s own developmental story: departure from the familiar, descent into the unknown, confrontation with the shadow/monster, and return with integrated energy.',
+    libido:'Libido of individuation — the drive toward differentiation, consciousness, and self-realization.',thinkers:['Jung','Campbell','Neumann']},
+  {id:'trickster_a',label:'Trickster\nArch.',x:875,y:733,r:26,color:'#5A3A6A',
+    subtitle:'Chaos & Transformation',
+    desc:'The Trickster breaks rules, subverts order, and creates by destroying. Hermes, Loki, Coyote, Anansi. He lives in the gaps between categories, moves between worlds. In creative life, the Trickster is the source of genuine originality. He erupts as the Freudian slip, the "accidental" sabotage, the symptom that carries a hidden message.',
+    libido:'Transgressive libido — the erotic charge of boundary-violation and creative destruction.',thinkers:['Radin','Jung','Hyde']},
+  {id:'eros_a',label:'Eros\nArch.',x:500,y:772,r:27,color:'#8A4A3A',
+    subtitle:'Cosmic Love Drive',
+    desc:'At the archetypal level, Eros is not merely sexuality but the cosmic principle of connection — the force that draws all things toward union. Plato established Eros as the intermediary between mortals and the divine. Romantic love, mystical experience, creative passion, and the hunger for meaning are all expressions of this same archetypal Eros.',
+    libido:'Eros IS libido at its archetypal root — the cosmic life-force before differentiation into drives.',thinkers:['Plato','Freud','Jung','Hillman']},
+  {id:'id_a',label:'ID · LIBIDO SOURCE',x:500,y:912,r:54,color:'#C4713A',
+    subtitle:'The Primal Reservoir',
+    desc:'The Id is Freud\'s name for the deepest psychic layer — the reservoir of all instinctual energy. It operates on the pleasure principle alone, with no concept of time, logic, contradiction, or mortality. It is pure libido: undifferentiated, amoral, and inexhaustible.\n\nAll the structures above — ego, superego, complexes, persona, defenses — are ways of organizing, directing, and transforming this primal energy. The goal of psychological development is not to eliminate the Id but to build a psyche spacious enough to contain its energy and transform it into conscious vitality.',
+    libido:'Libido itself — the undifferentiated source of all psychic energy.',thinkers:['Freud','Klein','Bion','Winnicott']},
+];
+
+const PSYCHE_CONNECTIONS=[
+  ['persona','ego'],['ego','superego'],['superego','ego_ideal'],['ego','ego_ideal'],
+  ['ego','repression2'],['repression2','shadow_c'],['repression2','mother_c'],['repression2','father_c'],
+  ['ego','projection2'],['projection2','shadow_c'],['projection2','anima_c'],
+  ['ego','sublim2'],['sublim2','creative_c'],
+  ['ego','displac'],['displac','father_c'],['displac','power_c'],
+  ['superego','react_form'],['react_form','inferiority_c'],
+  ['shadow_c','shadow_a'],['mother_c','great_m'],['father_c','wise_old'],
+  ['inferiority_c','power_c'],['inferiority_c','ego_ideal'],
+  ['anima_c','anima_a'],['hero_c','hero_a'],['creative_c','trickster_a'],
+  ['shadow_a','self_a'],['anima_a','self_a'],['great_m','self_a'],
+  ['wise_old','self_a'],['hero_a','self_a'],['trickster_a','self_a'],['eros_a','self_a'],
+  ['id_a','shadow_a'],['id_a','eros_a'],['id_a','great_m'],
+];
+
+const PSYCHE_LAYERS=[
+  {label:'I · CONSCIOUSNESS',y1:20,y2:215,bg:'rgba(212,168,83,0.04)',border:'rgba(212,168,83,0.2)',tc:'rgba(212,168,83,0.5)'},
+  {label:'REPRESSION BARRIER',y1:215,y2:285,bg:'rgba(154,138,187,0.07)',border:'rgba(154,138,187,0.3)',tc:'rgba(154,138,187,0.6)'},
+  {label:'II · PERSONAL UNCONSCIOUS',y1:285,y2:548,bg:'rgba(74,90,122,0.04)',border:'rgba(74,90,122,0.25)',tc:'rgba(122,154,187,0.6)'},
+  {label:'ARCHETYPAL THRESHOLD',y1:548,y2:598,bg:'rgba(106,58,106,0.07)',border:'rgba(138,90,138,0.3)',tc:'rgba(154,122,154,0.6)'},
+  {label:'III · COLLECTIVE UNCONSCIOUS',y1:598,y2:848,bg:'rgba(90,42,42,0.04)',border:'rgba(122,74,74,0.25)',tc:'rgba(187,122,122,0.6)'},
+  {label:'IV · ID  ·  LIBIDO SOURCE',y1:848,y2:970,bg:'rgba(139,58,26,0.12)',border:'rgba(196,113,58,0.35)',tc:'rgba(196,113,58,0.7)'},
+];
+
+// ══════════════════════ RENDER PSYCHE SVG ══════════════════════
+function renderPsyche(){
+  const svg=document.getElementById('psyche-svg');
+  let html='';
+
+  html+=`<defs>
+    <filter id="pg"><feGaussianBlur stdDeviation="3" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+    <radialGradient id="idg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C4713A" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#C4713A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4A050" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#D4A050" stop-opacity="0"/>
+    </radialGradient>
+  </defs>`;
+
+  // Layer bands
+  PSYCHE_LAYERS.forEach(l=>{
+    html+=`<rect x="0" y="${l.y1}" width="1000" height="${l.y2-l.y1}" fill="${l.bg}"/>`;
+    html+=`<line x1="0" y1="${l.y1}" x2="1000" y2="${l.y1}" stroke="${l.border}" stroke-width="1" stroke-dasharray="6 10"/>`;
+    html+=`<text x="8" y="${l.y1+14}" fill="${l.tc}" font-size="9" font-family="Cinzel,serif" letter-spacing="3">${l.label}</text>`;
+  });
+  html+=`<line x1="0" y1="970" x2="1000" y2="970" stroke="#2A1810" stroke-width="1"/>`;
+
+  // Glows
+  html+=`<ellipse cx="500" cy="912" rx="200" ry="60" fill="url(#idg)"/>`;
+  html+=`<circle cx="500" cy="658" r="90" fill="url(#sg)"/>`;
+
+  // Connections
+  PSYCHE_CONNECTIONS.forEach(([a,b])=>{
+    const na=PSYCHE_NODES.find(n=>n.id===a);
+    const nb=PSYCHE_NODES.find(n=>n.id===b);
+    if(na&&nb){
+      html+=`<line x1="${na.x}" y1="${na.y}" x2="${nb.x}" y2="${nb.y}" stroke="${na.color}18" stroke-width="1"/>`;
+    }
+  });
+
+  // Nodes
+  PSYCHE_NODES.forEach(node=>{
+    const lines=node.label.split('\n');
+    const isLarge=node.r>=40;
+    html+=`<g onclick="showPsycheNode('${node.id}')" style="cursor:pointer">
+      <circle cx="${node.x}" cy="${node.y}" r="${node.r+8}" fill="${node.color}00" stroke="transparent"/>
+      <circle cx="${node.x}" cy="${node.y}" r="${node.r}" fill="#080810" stroke="${node.color}" stroke-width="1" ${isLarge?'filter="url(#pg)"':''}/>
+      ${node.r>=30?`<circle cx="${node.x}" cy="${node.y}" r="${node.r-6}" fill="none" stroke="${node.color}30" stroke-width="1" stroke-dasharray="3 5"/>`:''}
+      ${lines.map((line,li)=>`<text x="${node.x}" y="${node.y+(li-(lines.length-1)/2)*11+1}" text-anchor="middle" dominant-baseline="middle" fill="${node.color}" font-size="${node.r>=44?12:node.r>=30?10:9}" font-family="Cinzel,serif" letter-spacing="0.3" font-weight="${node.r>=44?'600':'400'}">${line}</text>`).join('')}
+    </g>`;
+  });
+
+  svg.innerHTML=html;
+  renderFormation();
+  psycheRendered=true;
+}
+
+function showPsycheNode(id){
+  const node=PSYCHE_NODES.find(n=>n.id===id);
+  if(!node)return;
+  const c=node.color;
+  document.querySelector('#psyche-info .info-top').style.setProperty('--info-color',c);
+  document.getElementById('pi-title').textContent=node.label.replace(/\n/g,' ');
+  document.getElementById('pi-title').style.color=c;
+  document.getElementById('pi-sub').textContent=node.subtitle;
+  document.getElementById('pi-summary').textContent='';
+  document.getElementById('pi-body').innerHTML=`
+    <div class="info-section">
+      <div class="info-section-h" style="color:${c}">DESCRIPTION</div>
+      <div class="info-section-t">${node.desc}</div>
+    </div>
+    <div class="info-section" style="background:var(--surface);border:1px solid ${c}20;padding:10px 14px;">
+      <div class="info-section-h" style="color:${c}">LIBIDINAL RESONANCE</div>
+      <div class="info-section-t" style="font-style:italic;color:#A09060;">${node.libido}</div>
+    </div>
+  `;
+  const tt=document.getElementById('pi-thinkers');
+  const ttags=document.getElementById('pi-thinkers-tags');
+  if(node.thinkers&&node.thinkers.length){
+    tt.style.display='';
+    ttags.innerHTML=node.thinkers.map(t=>`<span class="thinker-tag" style="color:${c};border-color:${c}40">${t}</span>`).join('');
+  }else{tt.style.display='none';}
+}
+
+// ══════════════════════ FORMATION ══════════════════════
+const FORMATION_STEPS=[
+  {n:1,title:'Primal Charge',color:'#C4713A',
+    body:'An experience occurs with intense emotional charge — terror, shame, overwhelming desire, loss. The Id/libido is intensely activated around this event. The charge exceeds the ego\'s current capacity to integrate.',
+    libido:'Raw libido surges toward the charged event — the system is flooded with more energy than the ego can process.'},
+  {n:2,title:'Archetypal Activation',color:'#8A4A9A',
+    body:'The experience activates a corresponding archetype (Great Mother, Father, Shadow, Hero). The personal fuses with the transpersonal — which is why early wounds feel cosmically devastating, not merely situational.',
+    libido:'Libido acquires archetypal charge — personal energy amplified by the collective pattern beneath.'},
+  {n:3,title:'Repression / Fixation',color:'#4A5A7A',
+    body:'The ego cannot integrate the experience. It is too threatening, too conflicted, or too overwhelming. The material is actively repressed — excluded from consciousness but not destroyed.',
+    libido:'Libido becomes "bound" — frozen around the experience, unavailable for conscious use. The energy is dammed.'},
+  {n:4,title:'Nucleus Formation',color:'#5A6A4A',
+    body:'The repressed material forms a nucleus — a feeling-toned core around which similar experiences, images, memories, and body sensations cluster. The complex begins to cohere as a structure.',
+    libido:'Bound libido acts as a magnet — continuously attracting more material, growing the complex\'s mass.'},
+  {n:5,title:'Autonomous Structure',color:'#7A3A3A',
+    body:'The complex becomes autonomous — it has its own "personality," goals, and emotional tone. When activated (constellated by relevant stimuli), it can temporarily take over the ego: we react from the complex, not from our center.',
+    libido:'The complex now has its own libidinal economy — it "steals" energy from the ego, leaving the person depleted.'},
+  {n:6,title:'Constellation & Possession',color:'#6A4A3A',
+    body:'In daily life, the complex is triggered by situations that resemble its original formation context. A father-complex man "sees" his father in every authority figure. The past colonizes the present.',
+    libido:'The libido bound in the complex discharges in explosive, affect-laden reactions — disproportionate to the actual situation.'},
+  {n:7,title:'Integration or Pathology',color:'#5A7A6A',
+    body:'Two paths: (A) Integration — the ego meets the complex with awareness, dialogues with it through dreams and creative work, and gradually metabolizes its energy. (B) Avoidance — the complex continues operating autonomously, producing neurosis, projection, and compulsion.',
+    libido:'Integration: frozen libido returns to the psychic economy as free energy. Pathology: energy remains bound, fueling symptoms forever.'},
+];
+
+let currentFStep=0;
+function renderFormation(){
+  const stepsEl=document.getElementById('formation-steps');
+  stepsEl.innerHTML=FORMATION_STEPS.map((s,i)=>`
+    <button onclick="setFStep(${i})" style="width:40px;height:40px;border-radius:50%;border:1px solid ${s.color}${i===currentFStep?'':'50'};
+      background:${i===currentFStep?s.color+'18':'transparent'};color:${s.color};
+      font-family:'Cinzel',serif;font-size:13px;cursor:pointer;
+      box-shadow:${i===currentFStep?'0 0 16px '+s.color+'40':'none'};
+      transition:all .2s;">
+      ${s.n}
+    </button>
+  `).join(`<div style="width:24px;height:1px;background:linear-gradient(90deg,${FORMATION_STEPS.slice(0,-1).map((s,i)=>s.color+'50').join(',')});align-self:center;"></div>`).split(',').join('');
+
+  // Rebuild without connector hack
+  stepsEl.innerHTML='';
+  FORMATION_STEPS.forEach((s,i)=>{
+    const btn=document.createElement('button');
+    btn.style.cssText=`width:40px;height:40px;border-radius:50%;border:1px solid ${s.color}${i===currentFStep?'':'50'};background:${i===currentFStep?s.color+'18':'transparent'};color:${s.color};font-family:Cinzel,serif;font-size:13px;cursor:pointer;box-shadow:${i===currentFStep?'0 0 16px '+s.color+'40':'none'};transition:all .2s;`;
+    btn.textContent=s.n;
+    btn.onclick=()=>setFStep(i);
+    stepsEl.appendChild(btn);
+    if(i<FORMATION_STEPS.length-1){
+      const line=document.createElement('div');
+      line.style.cssText=`width:30px;height:1px;background:linear-gradient(90deg,${s.color}60,${FORMATION_STEPS[i+1].color}40);align-self:center;`;
+      stepsEl.appendChild(line);
+    }
+  });
+
+  showFStep();
+}
+
+function setFStep(i){
+  currentFStep=i;
+  renderFormation();
+}
+
+function showFStep(){
+  const s=FORMATION_STEPS[currentFStep];
+  const d=document.getElementById('formation-detail');
+  d.style.cssText=`background:var(--surface);border:1px solid ${s.color}30;padding:28px;position:relative;`;
+  d.innerHTML=`
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,${s.color},transparent);"></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+      <div style="width:52px;height:52px;border:2px solid ${s.color};display:flex;align-items:center;justify-content:center;background:${s.color}15;flex-shrink:0;box-shadow:0 0 20px ${s.color}30;">
+        <span style="font-family:Cinzel,serif;color:${s.color};font-size:20px;">${s.n}</span>
+      </div>
+      <div>
+        <div style="font-family:Cinzel,serif;font-size:20px;color:${s.color};letter-spacing:.08em;margin-bottom:3px;">${s.title}</div>
+        <div style="font-size:11px;color:var(--text4);letter-spacing:.15em;font-style:italic;">Stage ${s.n} of Complex Formation</div>
+      </div>
+    </div>
+    <div style="font-size:15px;line-height:1.85;color:var(--text2);margin-bottom:20px;">${s.body}</div>
+    <div style="background:#14120A;border:1px solid ${s.color}25;padding:12px 16px;">
+      <div style="font-family:Cinzel,serif;font-size:8px;letter-spacing:.22em;color:var(--text4);margin-bottom:6px;">LIBIDINAL DIMENSION</div>
+      <div style="font-size:13px;color:#A09060;font-style:italic;line-height:1.65;">${s.libido}</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:20px;">
+      <button onclick="setFStep(Math.max(0,${currentFStep}-1))" ${currentFStep===0?'disabled':''} style="padding:7px 18px;background:transparent;border:1px solid ${currentFStep===0?'var(--border)':'var(--border2)'};color:${currentFStep===0?'var(--text4)':'var(--text2)'};cursor:${currentFStep===0?'default':'pointer'};font-family:Cinzel,serif;font-size:10px;letter-spacing:.1em;">← PREV</button>
+      <span style="color:var(--text4);font-size:11px;font-style:italic;align-self:center;">${currentFStep+1} / ${FORMATION_STEPS.length}</span>
+      <button onclick="setFStep(Math.min(${FORMATION_STEPS.length-1},${currentFStep}+1))" ${currentFStep===FORMATION_STEPS.length-1?'disabled':''} style="padding:7px 18px;background:transparent;border:1px solid ${currentFStep===FORMATION_STEPS.length-1?'var(--border)':'var(--border2)'};color:${currentFStep===FORMATION_STEPS.length-1?'var(--text4)':'var(--text2)'};cursor:${currentFStep===FORMATION_STEPS.length-1?'default':'pointer'};font-family:Cinzel,serif;font-size:10px;letter-spacing:.1em;">NEXT →</button>
+    </div>
+  `;
+}
+
+function setPsycheTab(tab){
+  document.getElementById('psyche-map-view').style.display=tab==='map'?'':'none';
+  document.getElementById('psyche-form-view').style.display=tab==='form'?'':'none';
+  document.getElementById('ptab-map').style.cssText=tab==='map'?'background:rgba(212,168,83,.1);border:none;border-bottom:1px solid #D4A853;color:#D4A853;font-family:Cinzel,serif;font-size:9px;letter-spacing:.15em;padding:6px 16px;cursor:pointer;':'background:transparent;border:none;border-bottom:1px solid transparent;color:var(--text4);font-family:Cinzel,serif;font-size:9px;letter-spacing:.15em;padding:6px 16px;cursor:pointer;';
+  document.getElementById('ptab-form').style.cssText=tab==='form'?'background:rgba(212,168,83,.1);border:none;border-bottom:1px solid #D4A853;color:#D4A853;font-family:Cinzel,serif;font-size:9px;letter-spacing:.15em;padding:6px 16px;cursor:pointer;':'background:transparent;border:none;border-bottom:1px solid transparent;color:var(--text4);font-family:Cinzel,serif;font-size:9px;letter-spacing:.15em;padding:6px 16px;cursor:pointer;';
+}
+
+// ══════════════════════ ENCYCLOPEDIA DATA ══════════════════════
+const ENC_CATS=[
+  {id:'all',label:'ALL ENTRIES',color:'#D4A853'},
+  {id:'consciousness',label:'I · Consciousness',color:'#C8A060'},
+  {id:'defenses',label:'Repression Barrier',color:'#9A8ABB'},
+  {id:'complexes',label:'II · Personal Unconscious',color:'#7A9ABB'},
+  {id:'collective',label:'III · Collective Unconscious',color:'#BB8A7A'},
+  {id:'drives',label:'IV · Id & Drives',color:'#C4713A'},
+  {id:'development',label:'V · Development & Dynamics',color:'#7A9A7A'},
+];
+
+const ENC_ENTRIES=[
+  {id:'ego',cat:'consciousness',color:'#E8C870',title:'Ego',sub:'Center of Conscious Experience',
+    summary:'The "I" — mediator between the instincts, the demands of the superego, and the constraints of external reality. The organizing center of all conscious experience and voluntary action.',
+    sections:[
+      {h:'Definition & Structure',t:'The ego (Latin: "I") is the coherent, organized structure of the psyche in contact with the external world. Freud introduced it as a differentiated surface region of the id — the part modified by proximity to external reality. It operates on the reality principle: delaying gratification, testing reality, and planning adaptive behavior through secondary process thinking (logical, sequential, verbal).\n\nThe ego contains both conscious and unconscious portions. The defensive operations of the ego — mechanisms that ward off anxiety — are themselves unconscious. This is the fundamental paradox: the "I" does not fully know itself.'},
+      {h:'Freud\'s Structural Model',t:'In Freud\'s second topography (The Ego and the Id, 1923), the ego mediates between three forces: the Id (instinctual drives demanding discharge), the Superego (internalized moral authority), and external reality. Anxiety is the ego\'s signal of danger — from the id (neurotic anxiety), the superego (moral anxiety), or the world (realistic anxiety). Defense mechanisms are the ego\'s toolkit for managing these threats.'},
+      {h:'Ego Strength',t:'Hartmann (1958) introduced "ego strength" — the ego\'s capacity for autonomous functioning independent of conflict. A strong ego tolerates frustration, regulates affect, delays gratification, maintains a stable sense of self, and confronts anxiety without collapsing. Ego strength includes the capacity to acknowledge limitation and vulnerability.'},
+      {h:'Jung\'s Departure',t:'Jung fundamentally distinguished the ego from the Self. For Jung, the ego is only the center of consciousness — a small island in a vast ocean of psyche. The Self is the totality. The ego that mistakes itself for the whole psyche is in a state of inflation. Psychological maturity requires the ego to surrender its centrality to the larger organizing principle of the Self — individuation.'},
+      {h:'Neuroscientific Correlates',t:'Contemporary neuroscience locates ego functions primarily in the prefrontal cortex (PFC) — the brain\'s executive center responsible for planning, impulse control, working memory, and social cognition. Damasio\'s somatic marker hypothesis suggests the ego\'s reality-testing function depends on embodied emotional memory. The default mode network (DMN) — active during self-referential thought — may correspond to the ego\'s self-representational function.'},
+      {h:'Libidinal Relation',t:'The ego maintains both narcissistic libido (investment in itself) and object libido (investment in the world). These compete: intense love depletes self-investment; pathological narcissism withdraws libido from the world into the self. The ego\'s fundamental libidinal task is managing this economy — maintaining sufficient self-investment for resilience while directing enough energy outward for genuine engagement.'},
+    ],thinkers:['Freud (1923)','Hartmann (1958)','Jung','Kohut','Damasio'],related:['superego','persona','ego_ideal','repression','narcissism','id']},
+  {id:'persona',cat:'consciousness',color:'#C8A060',title:'Persona',sub:'The Social Mask',
+    summary:'The system of adaptations adopted for social life — the roles, styles, and presentations crafted to meet collective expectations. A necessary instrument of social navigation that becomes pathological when identified with.',
+    sections:[
+      {h:'Origin & Definition',t:'The term persona comes from the Latin word for masks worn by Roman actors. Jung introduced it as the functional complex representing adaptation to the external social world — the face we show the world. A compromise between individual nature and social necessity.\n\nThe persona is not inherently pathological — it is a necessary instrument of social life. Problems arise only when it is over-identified with — when the man becomes the mask. Status symbols, professional titles, and behavioral scripts are persona accessories that charge the mask with social power.'},
+      {h:'Formation',t:'The persona forms through: (1) the individual\'s natural temperament, (2) parental and social demands placed on behavior from earliest childhood, and (3) internalized collective cultural standards. It is partly chosen (we learn to perform roles) and partly unconsciously imposed.'},
+      {h:'Inflation & Collapse',t:'When the persona is inflated — when the individual identifies completely with their role — the inner life is suppressed and atrophies. Jung noted that persona inflation often precedes psychological breakdown. When external circumstances strip the persona — job loss, serious illness — the person confronts an inner emptiness they did not know existed. The crisis is simultaneously a catastrophe and an invitation to meet the real self.'},
+      {h:'Persona & Shadow',t:'The persona and shadow are complementary. What is included in the persona is systematically excluded from the shadow. The more rigid and over-developed the persona, the larger and more primitive the shadow. A man who has constructed an impeccable persona of rationality and control will carry a correspondingly volatile, irrational shadow.'},
+    ],thinkers:['Jung (1928)','Goffman (1959)'],related:['ego','shadow_complex','ego_ideal']},
+  {id:'superego',cat:'consciousness',color:'#A08048',title:'Superego',sub:'Internalized Authority',
+    summary:'The psychic agency of moral judgment — internalized through identification with parental and cultural authority, containing both the conscience (punishing pole) and the ego ideal (aspiring pole).',
+    sections:[
+      {h:'Structure & Origin',t:'Freud introduced the superego in "The Ego and the Id" (1923) as the internalized representative of parental and cultural authority. Two subsystems: the conscience (which punishes violations through guilt and shame) and the ego ideal (which holds the positive aspired self-image).\n\nThe severity of the superego is not simply a reflection of actual parental severity. The child\'s own aggression toward the feared/desired parent is redirected inward. The more aggression that cannot be expressed externally, the more punishing the superego becomes.'},
+      {h:'Formation Through Identification',t:'Freud\'s canonical account locates superego formation in the resolution of the Oedipus complex (ages 3–6). Faced with the prohibition against incestuous desire, the child internalizes the prohibiting parent through identification — "I am like the parent" replacing "I want the parent." This identification becomes the superego.'},
+      {h:'Klein\'s Contribution',t:'Melanie Klein (1928) pushed superego formation back to the first year of life, locating it in the infant\'s primitive internalization of the "good" and "bad" breast. The early superego is not rational but persecutory — a terrorizing internal presence reflecting the projection of the infant\'s own destructive impulses. This archaic superego underlies much adult psychopathology.'},
+      {h:'Lacan\'s Reformulation',t:'Lacan reinterpreted the superego through the Law of the Father — the principle of symbolic prohibition that structures entry into language and culture. For Lacan, the superego paradoxically commands enjoyment while prohibiting it: "Enjoy!" is the obscene command behind the apparent prohibition. This explains the superego\'s sadistic dimension.'},
+      {h:'Neuroscientific Basis',t:'Functions associated with the superego are distributed across: prefrontal cortex (moral reasoning, impulse inhibition), anterior cingulate cortex (conflict monitoring, guilt), and the limbic system (emotional coloring of moral judgments). Research by Haidt confirms that moral judgment is primarily emotional and post-hoc rationalized — consistent with Freud\'s model of the superego as a structure of internalized affects rather than logical propositions.'},
+    ],thinkers:['Freud (1923)','Klein (1928)','Lacan','Damasio'],related:['ego','ego_ideal','father_complex','repression']},
+  {id:'ego_ideal',cat:'consciousness',color:'#B09858',title:'Ego Ideal',sub:'The Aspired Self',
+    summary:'The internalized image of the self as it should be — the positive pole of the superego, organizing narcissistic aspiration and all human striving for excellence and recognition.',
+    sections:[
+      {h:'Definition',t:'The ego ideal is the aspirational component of the superego — the internalized image of perfection toward which the person strives. Freud traced the ego ideal to the transformation of primary narcissism: as the infant discovers it is not omnipotent, the original experience of perfection is projected forward into an ideal — "I will become what I once believed I was." All subsequent striving contains this hidden program.'},
+      {h:'Narcissism & the Gap',t:'Kohut (1971) placed the ego ideal at the center of his self-psychology. The gap between actual self and ego ideal is the engine of ambition. A moderate, bridgeable gap produces healthy drive. An unbridgeable gap — a fantastically inflated image of perfection — generates chronic shame, depression, and compensatory narcissism.\n\nStatus symbols function in this economy: they are temporary closings of the gap. The luxury watch, the title, the transformed physique — each is a statement: "I am closer to what I should be." The relief is temporary because no symbol can actually close the gap.'},
+      {h:'Lacan & Desire of the Other',t:'Lacan reformulated the ego ideal as the image through which the subject is recognized by the Other. We desire according to the desire of the Other — we want to be what the Other desires us to be. This explains why the ego ideal is so powerfully shaped by cultural images of success and masculinity.'},
+    ],thinkers:['Freud','Kohut (1971)','Lacan'],related:['superego','ego','narcissism','inferiority_complex']},
+  {id:'repression',cat:'defenses',color:'#8A7A9A',title:'Repression',sub:'Primary Defense — Foundation of the Unconscious',
+    summary:'The active exclusion of unacceptable mental contents from consciousness — the cornerstone defense mechanism and primary mechanism of complex formation. "The cornerstone on which the whole structure of psychoanalysis rests." — Freud',
+    sections:[
+      {h:'Discovery & Definition',t:'Repression (Verdrängung) is Freud\'s foundational discovery. In "Studies on Hysteria" (1895, with Breuer), Freud observed that patients\' symptoms could be traced to memories and affects actively pushed out of consciousness. Repression is not simple forgetting — the material remains dynamically active, consuming energy, and seeking expression through disguised channels.'},
+      {h:'Return of the Repressed',t:'Repressed material is not inert. It exerts continuous counter-pressure — Freud\'s "return of the repressed." It manifests in dreams (as wish-fulfillments in distorted form), in parapraxes (Freudian slips), in symptoms (hysterical conversions, obsessive rituals), and in transference (re-enacting repressed relational patterns). This dynamic pressure is the primary engine of complex formation.'},
+      {h:'Neurological Evidence',t:'Anderson & Green (2001, Science) identified a neural correlate of repression using fMRI: when subjects deliberately suppressed memories, the right dorsolateral prefrontal cortex (dlPFC) was activated while hippocampal activity was suppressed. Repeated suppression reduced later memory accessibility — a plausible neural mechanism for repression.'},
+      {h:'Libidinal Binding',t:'Every act of repression binds libidinal energy. The psychic work required to maintain the repression continuously consumes energy, leaving less available for conscious engagement with life. This is why repression produces fatigue, emotional flatness, and reduced vitality — the energy is tied up underground.'},
+    ],thinkers:['Freud & Breuer (1895)','Freud (1915)','Wegner (1989)','Anderson & Green (2001)'],related:['ego','shadow_complex','complexes','projection','sublimation']},
+  {id:'projection',cat:'defenses',color:'#6A7A9A',title:'Projection',sub:'Externalizing the Interior',
+    summary:'The attribution of one\'s own unacknowledged impulses, feelings, or complex content to another person or group — the mechanism of prejudice, romantic idealization, and political demonization.',
+    sections:[
+      {h:'Mechanism',t:'Projection is the process by which internal states are experienced as external realities. The person who cannot own their anger perceives others as angry. The person ashamed of their sexuality sees sexual provocation everywhere. Freud originally identified projection in paranoia — the mechanism that converts the unacceptable thought "I hate him" into "He hates me." But projection is universal, operating in ordinary prejudice with the same structure as in pathology.'},
+      {h:'Projective Identification (Klein)',t:'Melanie Klein (1946) deepened the concept with "projective identification" — a more primitive form in which the subject not only attributes their inner state to another but unconsciously induces that state in them. The person with unmanageable rage projects it into their partner and, through subtle behavioral pressure, actually causes the partner to rage — then feels persecuted by the very rage they installed.'},
+      {h:'Anima & Animus Projection',t:'Jung identified anima/animus projection as developmental rather than pathological: the projection of the inner feminine (anima) and masculine (animus) soul-images onto real persons. Falling in love is the paradigm case — the beloved receives the full charge of the projected inner figure. The eventual disappointment is an invitation to find the projected qualities within oneself.'},
+      {h:'Cultural & Collective Projection',t:'Every historical persecution follows the same structure: the collective shadow is projected onto a designated enemy, whose "crimes" mirror the projected impulses of the persecutors. The intensity of hatred toward a group is proportional to the charge of the projected shadow — those who hate most ferociously are often closest to possessing the very qualities they condemn.'},
+    ],thinkers:['Freud (1911, 1921)','Klein (1946)','Jung'],related:['shadow_complex','anima_complex','repression','splitting']},
+  {id:'sublimation',cat:'defenses',color:'#6A9A7A',title:'Sublimation',sub:'Transformation — The Highest Defense',
+    summary:'The redirection of libidinal and aggressive energy from their original aims toward culturally valued creative and intellectual goals — the mechanism by which civilization is built.',
+    sections:[
+      {h:'Definition & Distinction',t:'Sublimation is the only defense mechanism that genuinely transforms rather than merely suppresses libidinal energy. Unlike repression (which buries the drive), displacement (which redirects it), or reaction formation (which inverts it), sublimation changes the aim of the drive entirely. The energy is not lost — it is genuinely converted. This is why sublimation produces vitality rather than the deadness of repression.'},
+      {h:'Civilization & Sublimation',t:'Freud\'s cultural theory ("Civilization and Its Discontents," 1930) is fundamentally a theory of sublimation. Civilization is built on the organized sublimation of sexual and aggressive drives. Cultural achievements — art, science, law, philosophy — are monuments to transformed libido. The price: civilization requires repression, which produces the widespread neurosis that is the normal condition of civilized humanity.'},
+      {h:'The Creative Process',t:'The creative act preserves the structure of the sexual act: tension (inspiration, preparation), climax (the breakthrough moment of creation), and release (completion, publication). Many artists report that periods of intense creative productivity accompany or substitute for sexual life — and periods of sexual fulfillment can temporarily diminish creative hunger.'},
+    ],thinkers:['Freud (1908, 1930)','Rank (1932)','May (1975)','Winnicott'],related:['repression','creative_complex','libido','displacement']},
+  {id:'shadow_complex',cat:'complexes',color:'#4A5A7A',title:'Shadow Complex',sub:'The Rejected Self',
+    summary:'The personal unconscious aggregate of everything rejected by the ego and persona — suppressed qualities, repressed impulses, unlived life, and the "dark" counterpart to the conscious personality.',
+    sections:[
+      {h:'Definition',t:'The shadow contains what the ego refuses to acknowledge — everything that does not fit the persona, violates the superego\'s standards, or was suppressed in childhood to maintain love and social acceptance. This includes not only "dark" content (aggression, sexuality, greed, envy) but also "golden shadow" — positive qualities that were suppressed because they threatened a parent or didn\'t fit the family role.\n\nThe shadow is not evil. It is unlived life.'},
+      {h:'Shadow & Projection',t:'The shadow\'s primary dynamic is projection. We see in others — especially people who provoke intense reactions — what we cannot own in ourselves. The intensity of the reaction (disgust, contempt, hatred, or fascination) is proportional to the charge of the projected shadow material. Jung\'s "shadow rule": what disturbs us most in others is what we most need to own in ourselves.'},
+      {h:'Biological Basis',t:'The amygdala processes threat-related stimuli and produces rapid, pre-conscious emotional responses. When the shadow is activated, the amygdala\'s threat response is triggered — producing the characteristic flooding of affect and loss of executive control. Research on implicit attitudes (IAT — Greenwald et al., 1998) demonstrates that people hold implicit biases that contradict their explicit self-image — a direct empirical demonstration of the shadow principle.'},
+      {h:'Integration',t:'Shadow integration requires: (1) Noticing strong emotional reactions to others and asking "what does this tell me about myself?" (2) Withdrawing projections — reclaiming the projected quality. (3) Engaging shadow material in imagination, dream work, and creative expression rather than enacting it. Jung was unequivocal: shadow integration does not make a person "darker" but more whole, more authentic, and paradoxically more ethical.'},
+    ],thinkers:['Jung','Bly (1988)','R. Johnson (1991)','Zweig & Abrams'],related:['shadow_arch','projection','repression','persona','individuation']},
+  {id:'mother_complex',cat:'complexes',color:'#7A5A4A',title:'Mother Complex',sub:'The Primal Bond',
+    summary:'The constellation of affects, images, and behavioral patterns organized around the maternal figure and the archetypal Great Mother — the first and most fundamental complex in human development.',
+    sections:[
+      {h:'Origin',t:'The mother complex forms around the actual experience of the mother (or primary caregiver) in early childhood, amplified by the archetypal pattern of the Great Mother beneath it. John Bowlby\'s attachment theory (1969) provides empirical grounding: the internal working model (IWM) that develops from the primary attachment relationship becomes the template for all subsequent relationships.'},
+      {h:'Manifestations in Men',t:'Positive: sensitivity, aesthetic refinement, capacity for relatedness, spiritual receptivity. Negative: inability to individuate from the maternal, infantile dependency in relationships, mother-son entanglement that substitutes for adult relationship. The man who cannot commit because every woman is unconsciously measured against — and found wanting compared to — the idealized mother.'},
+      {h:'Winnicott\'s Contribution',t:'D.W. Winnicott (1960) described conditions required for healthy mother-complex formation: the "good-enough mother" who provides a reliable holding environment, mirrors the infant\'s aliveness, and gradually allows separation without abandonment. The capacity for "being alone in the presence of another" — the foundation of psychological independence — develops from this reliable holding.'},
+    ],thinkers:['Jung','Bowlby (1969)','Winnicott (1960)','Corneau (1991)','Klein'],related:['great_mother','shadow_complex','anima_complex','attachment']},
+  {id:'inferiority_complex',cat:'complexes',color:'#6A5A3A',title:'Inferiority Complex',sub:'The Wound of Insufficient Being',
+    summary:'Alfred Adler\'s foundational insight: a fixed sense of inadequacy that becomes the organizing principle of the personality, driving all compensatory striving — including the pursuit of status symbols.',
+    sections:[
+      {h:'Adler\'s Discovery',t:'Alfred Adler (1907) introduced the concept: every human being experiences inferiority — of being small, helpless, and dependent in a world of larger, more capable others. All striving is driven by the compensatory movement toward overcoming it. The inferiority complex forms when this becomes a fixed organizing principle rather than a spur to genuine growth.'},
+      {h:'The Masculinity-Status Connection',t:'The direct connection to masculine status-seeking: the inferiority complex is the wound that transforms status symbols into libidinal objects of disproportionate significance. The man who genuinely feels adequate does not need the Rolex to feel adequate. The man driven by an inferiority complex invests external symbols with the energy of his compensatory striving — each acquisition temporarily closes the gap between experienced inadequacy and ego ideal.'},
+      {h:'Neuroscience of Social Rank',t:'Serotonergic system tone correlates with perceived social rank in primates: dominant animals have higher serotonin levels. Testosterone rises with social victory and falls with defeat. The neural reward circuits (nucleus accumbens, dopaminergic pathways) are activated by social approval and status acquisition — the drive for social rank is hardwired, and the inferiority complex represents a pathological dysregulation of this universal system.'},
+    ],thinkers:['Adler (1907, 1927)','Horney (1945)','Dreikurs'],related:['ego_ideal','power_complex','narcissism','ego']},
+  {id:'father_complex',cat:'complexes',color:'#5A6A4A',title:'Father Complex',sub:'The Authority Imprint',
+    summary:'The constellation organized around the paternal figure — shaping the relationship to authority, law, ambition, and masculine identity. Often the root of both compulsive rebellion and compulsive submission.',
+    sections:[
+      {h:'Formation',t:'The father complex forms around the actual father (or primary paternal figure), amplified by the archetypal pattern of the Wise Old Man/Father beneath it. Freud\'s Oedipus complex is the specific formulation: the boy\'s rivalrous desire for the mother, castration anxiety before the paternal prohibition, and resolution through identification with the father — which establishes both the superego and masculine identity simultaneously.'},
+      {h:'Manifestations',t:'Unresolved positive father complex: idealization of father figures, eternal search for the mentor, inability to assume one\'s own authority. Unresolved negative (absent, critical, or abusive father): compulsive rebellion against authority OR compulsive submission — the two sides of the same unresolved complex. The power complex frequently develops as compensation.'},
+      {h:'The Absent Father',t:'Robert Bly ("Iron John," 1990) and Guy Corneau ("Absent Fathers, Lost Sons," 1991) documented the epidemic of father-wound in post-industrial societies. The physical and psychological absence of the father leaves the son without a masculine pole of identification — the boy remains bound to the mother complex without the countervailing paternal energy needed to initiate him into adult masculine life.'},
+    ],thinkers:['Freud','Jung','Bly (1990)','Corneau (1991)'],related:['wise_old_man','oedipus','superego','power_complex','anima_complex']},
+  {id:'power_complex',cat:'complexes',color:'#6A4A5A',title:'Power Complex',sub:'Domination as Defense',
+    summary:'The organization of libidinal energy around control, domination, and superiority — typically compensatory for underlying powerlessness, and the libidinal substrate of status obsession.',
+    sections:[
+      {h:'Definition',t:'The power complex organizes the psyche around the drive to control, dominate, and assert superiority. When this complex possesses the ego, all relationships become dominance contests and all vulnerability becomes an existential threat.\n\nAdler considered the drive for power the primary compensatory mechanism against inferiority feelings. Jung agreed but located the power complex more specifically: it arises when the will to power substitutes for the will to meaning.'},
+      {h:'Fromm\'s Analysis',t:'Erich Fromm ("Escape from Freedom," 1941) distinguished productive power (the power to create, build, act) from destructive power (power over others). The authoritarian character is rooted in the fear of freedom and anxiety of genuine selfhood. The authoritarian who dominates others is simultaneously dominated — he cannot tolerate genuine autonomy in others or in himself.'},
+      {h:'Nietzsche\'s Distinction',t:'Nietzsche\'s Will to Power, understood correctly, is not the power complex but its transcendence — the will to become oneself, to overcome resistance in service of genuine self-realization rather than domination of others. The power complex is Will to Power in its most arrested, most fearful, most compensatory form.'},
+    ],thinkers:['Adler','Fromm (1941)','Jung','Nietzsche'],related:['inferiority_complex','father_complex','shadow_complex','narcissism']},
+  {id:'anima_complex',cat:'complexes',color:'#5A6A7A',title:'Anima / Animus Complex',sub:'The Inner Beloved',
+    summary:'The contra-sexual complex — the feminine soul-image in men (anima) and masculine soul-image in women (animus) — mediating between ego and the deeper unconscious, and the vehicle of all romantic projection.',
+    sections:[
+      {h:'Jung\'s Discovery',t:'In men, the personal unconscious contains a feminine figure — the anima — built from the imprint of the mother, sisters, early love objects, and cultural images of the feminine, overlaid on the deeper archetypal feminine principle. The anima/animus is simultaneously a complex (personal, built from experience) and an archetype (transpersonal, inherited). This dual nature gives it exceptional power.'},
+      {h:'The Four Levels of Anima',t:'Jung described the anima\'s developmental levels in men:\n1. Eve — the biological, instinctual feminine: pure sexual desire, the body.\n2. Helen of Troy — the romantic ideal: aestheticized, idealized, externally projected.\n3. Mary — the spiritual feminine: devotion, transcendence, inner guidance.\n4. Sophia — wisdom: the fully integrated inner feminine as guide to the Self.'},
+      {h:'Projection & Romantic Love',t:'"Falling in love" is, in part, the recognition of one\'s own soul-image in another person — accounting for the uncanny sense of familiarity at first encounter and the numinous quality of the beloved. As the relationship matures, projection diminishes and the real person becomes visible. Mature love is love of the real person, not the projected image.'},
+    ],thinkers:['Jung','von Franz (1959)','Hillman (1985)','E. Jung (1957)'],related:['anima_arch','mother_complex','projection','eros_arch','individuation']},
+  {id:'self_arch',cat:'collective',color:'#D4A050',title:'The Self',sub:'Archetype of Wholeness',
+    summary:'The central archetype and regulating principle of the psyche — the totality of conscious and unconscious, the goal of individuation, and Jung\'s psychological equivalent of the divine center.',
+    sections:[
+      {h:'Definition',t:'The Self (with capital S) is Jung\'s term for the totality of the psyche — not the ego but the whole, encompassing conscious and unconscious, light and shadow, masculine and feminine, personal and collective. The ego is the center of consciousness; the Self is the center and circumference of the entire psyche.\n\nThe ego that mistakes itself for the totality — ego inflation — is the root of grandiosity, fanaticism, and psychological rigidity.'},
+      {h:'Self as Goal',t:'Development moves from the unconscious wholeness of infancy through the differentiation and strengthening of the ego toward the reintegration of a conscious wholeness in which the ego has entered into a living relationship with the Self (individuation). The ego-Self axis is the central dynamic of psychological health: a strong axis means the ego is in living contact with the deeper source of vitality and meaning.'},
+      {h:'Neuroscientific Parallel',t:'Mark Solms (2021) has mapped Jungian Self-functions onto neuroscience. The brainstem, particularly the periaqueductal gray (PAG), generates the basic sense of subjective being — the feeling of existing — which corresponds to what Jung called the Self\'s most fundamental function. The integrative functions of the Self correspond to the global integrative functions of the Default Mode Network.'},
+    ],thinkers:['Jung (1934)','Edinger (1972)','Neumann','Solms (2021)'],related:['individuation','ego','shadow_arch','anima_arch','eros_arch']},
+  {id:'collective_unconscious',cat:'collective',color:'#BB8A7A',title:'Collective Unconscious',sub:'The Inherited Psychic Substrate',
+    summary:'The deepest stratum of the unconscious, shared by all humanity, containing the inherited structural patterns — archetypes — through which universal human experiences are organized.',
+    sections:[
+      {h:'Discovery & Definition',t:'Jung arrived at the concept through his observations that patients\' dreams and psychotic productions contained mythological motifs they could not have known through personal experience. Identical symbols appeared across cultures with no historical contact — the mandala, the dragon, the wise old man, the divine child.\n\nThe collective unconscious is not personal — it contains inherited structural patterns of psychic response: archetypes. It is species-wide — the psychological equivalent of the shared physical structures of the human body.'},
+      {h:'Evolutionary Basis',t:'Just as the human body carries the evolutionary history of the species in its anatomical structures, the psyche carries its history in the archetypes. Contemporary evolutionary psychology (Tooby & Cosmides) provides indirect support: the mind contains innate, specialized modules shaped by evolutionary pressures — consistent with Jung\'s claim that the psyche is not a blank slate but carries inherited structural dispositions.'},
+      {h:'Scientific Status',t:'Neuroimaging studies show universal patterns of neural activation in response to archetypal stimuli. Mark Solms and neuroscientist-Jungian collaborations have sought to map archetypal patterns onto neural structures — particularly the subcortical instinctual systems identified by Panksepp (SEEKING, RAGE, FEAR, LUST, CARE, GRIEF, PLAY).'},
+    ],thinkers:['Jung (1916, 1934)','Campbell (1949)','Panksepp','Solms','Tooby & Cosmides'],related:['archetypes','self_arch','shadow_arch','anima_arch','individuation']},
+  {id:'id',cat:'drives',color:'#C4713A',title:'The Id',sub:'The Primal Reservoir',
+    summary:'The deepest psychic layer — the reservoir of all instinctual energy, operating on the pleasure principle, indifferent to reality, morality, or time. The source from which all psychic structure differentiates.',
+    sections:[
+      {h:'Freud\'s Definition',t:'Freud introduced the Id (das Es — "the It") in "The Ego and the Id" (1923) as the original psychic system from which all other structures differentiate. The Id contains everything inherited — the instincts (drives) in their original undifferentiated state. It knows no negation, no time, no reality, no death. Freud\'s description: "the dark, inaccessible part of our personality... a chaos, a cauldron full of seething excitations."'},
+      {h:'Neuroscientific Correlates',t:'Modern neuroscience (Solms, 2021) has located Id-equivalent functions in subcortical structures — particularly the brainstem and hypothalamus, where the basic drives (hunger, thirst, sex, aggression) originate. These structures predate the neocortex evolutionarily — they are the "old brain" within which consciousness is embedded.'},
+      {h:'Winnicott\'s "True Self"',t:'Winnicott approached Id-level experience through his concept of the True Self — the spontaneous, aliveness-bearing core of the personality that is rooted in bodily impulse and genuine desire. The True Self is not "bad" but is the most precious and vulnerable part of the person. Genuine aliveness is not opposed to health — it is health at its most fundamental.'},
+    ],thinkers:['Freud (1923)','Winnicott','Solms (2021)','Bion'],related:['libido','eros_drive','thanatos','ego']},
+  {id:'libido',cat:'drives',color:'#D4903A',title:'Libido',sub:'Psychic Life-Force',
+    summary:'The fundamental energy of the psyche — sexual in origin (Freud) but expanded by Jung into the universal energy of all desire, striving, and vital engagement with the world.',
+    sections:[
+      {h:'Freud\'s Sexual Libido',t:'Freud introduced libido (Latin: desire, lust) as the energy of the sexual drive (Eros/life drive) — the force underlying all manifestations of sexuality in the broadest sense: not merely genital sexuality but all body pleasure, tenderness, sensual appreciation, and relational warmth. Libido is the economic quantity (psychic energy) that can be invested in objects (cathexis), withdrawn (decathexis), transformed (sublimation), or blocked (repression/fixation).'},
+      {h:'Jung\'s Expansion',t:'Jung\'s decisive break from Freud centered on libido. Jung argued (1912) that Freud\'s libido theory was too restrictive. Jung recast libido as a general psychic energy that could flow through any channel: sexual, creative, spiritual, aggressive, social, intellectual. This expanded concept made it possible to understand the genuine intensity of religious devotion, intellectual passion, and creative obsession without reducing them to displaced sexuality.'},
+      {h:'Panksepp\'s Neuroscience',t:'Panksepp\'s (1998) "affective neuroscience" identified seven primary emotional systems in mammalian brains: SEEKING (curiosity/desire), RAGE (aggression), FEAR (terror), LUST (sexual desire), CARE (nurturing), GRIEF/PANIC (separation distress), and PLAY (social joy). The SEEKING system — the dopaminergic "wanting" circuit — may be the closest neural correlate of libido in its most general sense: the forward-directed energy of desire and engagement.'},
+    ],thinkers:['Freud (1905)','Jung (1912)','Panksepp (1998)','Marcuse'],related:['id','eros_drive','thanatos','sublimation','narcissism']},
+  {id:'individuation',cat:'development',color:'#7A9A7A',title:'Individuation',sub:'The Process of Becoming Oneself',
+    summary:'Jung\'s concept for the lifelong psychological process of integrating all aspects of the psyche — conscious and unconscious, shadow and light — into a coherent, differentiated whole.',
+    sections:[
+      {h:'Definition',t:'Individuation (from Latin individuus, "undivided") is the process of differentiation having for its goal the development of the individual personality. It is not individualism (the isolation of the ego from the collective) but the achievement of genuine uniqueness within relationship — the development of the particular individual one most deeply is, distinct from both collective conformity and personal ego-inflation.'},
+      {h:'The Process',t:'Individuation typically begins in the second half of life (after 35–40), when the adaptations of the first half have been established and begin to feel insufficient. The process involves:\n\n1. Encounter with the shadow — owning what has been projected and denied\n2. Anima/animus confrontation — recovering the projected contra-sexual soul\n3. Encounter with the Self — the gradual shift from ego-centered to Self-centered organization\n4. Coniunctio — the "sacred marriage" of opposites within the psyche\n\nThe individuation process is not linear — it spirals, revisiting the same themes at ever-deeper levels.'},
+      {h:'Ego-Self Axis',t:'Edward Edinger ("Ego and Archetype," 1972) described individuation through the ego-Self axis — the living connection between the ego (center of consciousness) and the Self (totality of the psyche). Development alternates between inflation (identification with the Self) and alienation (separation from the Self) until a more mature, differentiated relationship is established.'},
+    ],thinkers:['Jung (1916, 1954)','Edinger (1972)','Neumann','von Franz'],related:['self_arch','shadow_complex','anima_complex','persona','ego']},
+  {id:'attachment',cat:'development',color:'#7A8A6A',title:'Attachment Theory',sub:'The Biological Roots of Object Relation',
+    summary:'Bowlby\'s theory that the need for close emotional bonds is a primary biological drive — not derived from feeding or sexuality but fundamental in its own right, shaping all subsequent relationships.',
+    sections:[
+      {h:'Bowlby\'s Revolution',t:'John Bowlby (1969) proposed that the infant\'s need for attachment to a primary caregiver is a primary biological drive — hardwired by evolution as a survival mechanism. This is not "dependency" in a pejorative sense but the biological foundation of psychological security.\n\nBowlby\'s radical departure from Freud: attachment need is not derived from oral libido or feeding satisfaction. It is a separate motivational system with its own biological substrate, developmental trajectory, and psychopathology.'},
+      {h:'Attachment Patterns',t:'Mary Ainsworth\'s Strange Situation (1969) identified four attachment patterns:\n• Secure: distressed by separation, comforted by reunion\n• Anxious-ambivalent: highly distressed, not comforted by reunion\n• Avoidant: apparently undistressed — caregiver consistently rejecting\n• Disorganized/disoriented (Main & Solomon, 1986): caregiver is simultaneously source of fear and comfort\n\nThese patterns persist as internal working models (IWM) — unconscious templates for all subsequent relationships.'},
+      {h:'Neurobiology',t:'Attachment has clear neurobiological substrates: oxytocin and vasopressin systems support bonding; the HPA axis is calibrated by early attachment experiences. Allan Schore (2003) showed that right-brain-to-right-brain communication between caregiver and infant during the first 18 months shapes the development of the right prefrontal cortex — the brain\'s primary affect regulation center.'},
+    ],thinkers:['Bowlby (1969)','Ainsworth (1969)','Main','Schore (2003)','Fonagy'],related:['mother_complex','ego','repression','trauma']},
+  {id:'narcissism',cat:'development',color:'#9A8A5A',title:'Narcissism',sub:'Libidinal Investment in the Self',
+    summary:'The investment of libido in the self — from healthy self-regard to pathological grandiosity and the hunger for mirroring. Central to understanding masculine status-seeking and the ego ideal.',
+    sections:[
+      {h:'Freud\'s Theory',t:'Freud introduced narcissism ("On Narcissism," 1914) to explain states in which libido is invested in the self rather than in external objects. Primary narcissism — the infant\'s original state of libidinal self-sufficiency — is the baseline from which object libido differentiates. The ego ideal forms as a substitute for lost narcissistic perfection.'},
+      {h:'Kohut\'s Self Psychology',t:'Kohut (1971) showed that healthy narcissism requires two early experiences:\n• Mirroring — the caregiver\'s accurate, enthusiastic reflection of the child\'s aliveness\n• Idealization — the child\'s experience of merging with a calm, powerful, admirable caregiver\n\nWhen chronically unmet, narcissistic needs persist in immature form — producing the grandiose/vulnerable narcissistic personality.'},
+      {h:'Pathological Narcissism',t:'Kernberg (1975) showed that pathological narcissism is not merely excessive self-love but the defensive fusion of self and ideal self-image — a grandiose self built to protect against underlying worthlessness and intense envy.\n\nThe paradox: the person who appears most self-sufficient is typically most vulnerable to shame and most hungry for external validation. The grandiosity is the defense against the underlying emptiness.'},
+    ],thinkers:['Freud (1914)','Kohut (1971)','Kernberg (1975)','Lasch'],related:['ego','ego_ideal','libido','inferiority_complex','superego']},
+  {id:'trauma',cat:'development',color:'#7A5A5A',title:'Psychological Trauma',sub:'The Wound That Structures',
+    summary:'Experience that exceeds the ego\'s capacity for integration — producing lasting disruptions in memory, affect regulation, and the sense of self. "The body keeps the score." — van der Kolk',
+    sections:[
+      {h:'Definition',t:'Trauma (Greek: wound) refers to experience that overwhelms the ego\'s capacity for processing and integration. Van der Kolk ("The Body Keeps the Score," 2014): "trauma is not the story of something that happened in the past; it is the current imprints of that experience in the body, sensory experience, and psychology." Trauma is a present-tense event masquerading as history.'},
+      {h:'Developmental Trauma',t:'Complex developmental trauma — chronic, repeated relational trauma in childhood — produces more pervasive effects than single-incident trauma. The child\'s developing nervous system is calibrated by the attachment environment: chronic threat, unpredictability, or neglect shapes the HPA axis and the developing architecture of the brain toward a survival-oriented, threat-hypervigilant mode.'},
+      {h:'Repetition Compulsion',t:'Freud\'s repetition compulsion — the unconscious recreation of traumatic relational patterns in new situations — is the mechanism by which unresolved trauma structures present experience. The abused child seeks abusive partners; the neglected person constructs relationships of abandonment.\n\nThe compulsion is not masochistic self-sabotage but an attempt at mastery: the psyche recreates the original situation hoping this time to get a different outcome.'},
+    ],thinkers:['Freud','van der Kolk (2014)','Levine','Herman (1992)','Ogden'],related:['repression','attachment','id','complexes']},
+];
+
+// ══════════════════════ RENDER ENCYCLOPEDIA ══════════════════════
+let encCurrentId=null;
+function renderEncyclopedia(){
+  // Build category buttons
+  const catsEl=document.getElementById('enc-cats');
+  catsEl.innerHTML=ENC_CATS.map((c,i)=>`
+    <button class="enc-cat-btn ${i===0?'active':''}" onclick="filterEncyclopedia('${c.id}',this)" style="--active:${c.color}">
+      <span>${c.label}</span>
+      <span>${c.id==='all'?ENC_ENTRIES.length:ENC_ENTRIES.filter(e=>e.cat===c.id).length}</span>
+    </button>
+  `).join('');
+  buildEncList('all');
+  showEncEntry(ENC_ENTRIES[0].id);
+  encRendered=true;
+}
+
+let encCurrentCat='all';
+function filterEncyclopedia(cat,btn){
+  if(cat)encCurrentCat=cat;
+  const q=document.getElementById('enc-search-input').value.toLowerCase();
+  if(btn){
+    document.querySelectorAll('.enc-cat-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  buildEncList(encCurrentCat,q);
+}
+
+function buildEncList(cat,q=''){
+  const list=document.getElementById('enc-list');
+  const filtered=ENC_ENTRIES.filter(e=>{
+    const matchCat=cat==='all'||e.cat===cat;
+    const matchQ=!q||e.title.toLowerCase().includes(q)||e.sub.toLowerCase().includes(q)||e.summary.toLowerCase().includes(q);
+    return matchCat&&matchQ;
+  });
+
+  // Group by category
+  const groups={};
+  filtered.forEach(e=>{
+    if(!groups[e.cat])groups[e.cat]=[];
+    groups[e.cat].push(e);
+  });
+
+  let html='';
+  ENC_CATS.slice(1).forEach(c=>{
+    if(!groups[c.id])return;
+    html+=`<div style="padding:4px 12px 2px;font-family:Cinzel,serif;font-size:8px;letter-spacing:.2em;color:${c.color}80;">${c.label}</div>`;
+    groups[c.id].forEach(e=>{
+      html+=`<button class="enc-entry-btn ${encCurrentId===e.id?'active':''}" onclick="showEncEntry('${e.id}')" style="--active-color:${e.color};">
+        <span class="et">${e.title}</span>
+        <span class="es">${e.sub}</span>
+      </button>`;
+    });
+  });
+  list.innerHTML=html||'<div style="padding:20px 16px;color:var(--text4);font-size:13px;font-style:italic;">No entries found.</div>';
+}
+
+function showEncEntry(id){
+  const entry=ENC_ENTRIES.find(e=>e.id===id);
+  if(!entry)return;
+  encCurrentId=id;
+  const c=entry.color;
+  const cat=ENC_CATS.find(c=>c.id===entry.cat);
+  const content=document.getElementById('enc-content');
+
+  content.innerHTML=`
+    <div class="enc-entry-header">
+      <span class="enc-cat-tag" style="color:${c};border-color:${c}40;">${cat?.label||''}</span>
+      <h1 class="enc-entry-title" style="color:${c};text-shadow:0 0 40px ${c}40;">${entry.title}</h1>
+      <div class="enc-entry-sub">${entry.sub}</div>
+      <div class="enc-entry-div" style="background:linear-gradient(90deg,${c},transparent);"></div>
+      <p class="enc-entry-summary">${entry.summary}</p>
+    </div>
+    ${entry.sections.map(s=>`
+      <div class="enc-section">
+        <div class="enc-section-h" style="color:${c};">${s.h.toUpperCase()}</div>
+        <div class="enc-section-t">${s.t}</div>
+      </div>
+    `).join('')}
+    ${entry.thinkers?.length?`
+      <div class="enc-thinker-box" style="border-color:${c}25;color:${c};">
+        <div class="enc-thinker-label">KEY THINKERS & SOURCES</div>
+        ${entry.thinkers.map(t=>`<span class="thinker-tag" style="color:${c};border-color:${c}40;margin:2px;">${t}</span>`).join('')}
+      </div>
+    `:''}
+    ${entry.related?.length?`
+      <div class="enc-related">
+        <div class="enc-related-label">SEE ALSO</div>
+        ${entry.related.map(rid=>{
+          const rel=ENC_ENTRIES.find(e=>e.id===rid);
+          if(!rel)return '';
+          return `<button class="enc-related-btn" onclick="showEncEntry('${rid}')" style="border-color:${rel.color}40;color:${rel.color}AA;">${rel.title}</button>`;
+        }).join('')}
+      </div>
+    `:''}
+  `;
+
+  // Update list highlight
+  document.querySelectorAll('.enc-entry-btn').forEach(b=>{
+    b.classList.remove('active');
+    if(b.onclick.toString().includes(`'${id}'`))b.classList.add('active');
+  });
+
+  document.querySelector('.enc-main').scrollTop=0;
+}
+
+// ══════════════════════ UTILITIES ══════════════════════
+function polarXY(cx,cy,r,angleDeg){
+  const rad=((angleDeg-90)*Math.PI)/180;
+  return{x:cx+r*Math.cos(rad),y:cy+r*Math.sin(rad)};
+}
+function angDiff(a,b){
+  return Math.abs(((a-b+540)%360)-180);
+}
+</script>
+</body>
+</html>
